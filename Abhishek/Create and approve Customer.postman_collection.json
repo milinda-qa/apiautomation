@@ -1,0 +1,1827 @@
+{
+	"info": {
+		"_postman_id": "81836bbf-be4d-41a3-a5d8-162fe83d186a",
+		"name": "Create and approve Customer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8164109"
+	},
+	"item": [
+		{
+			"name": "Login Super Admin",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"var auth = pm.response.headers.get(\"Authorization\");\r",
+							"pm.collectionVariables.set(\"Authorization\", auth);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2IiwiY3R5IjoiSldUIn0..avUKvHFZS4xEg0GSRYCluQ.meYv9wl7Hf7BaVga83_Wot3c6tUzjdnvqByo4FOIBmFu37dUcK1GgMWzwhnBhUvghBydBkegvrJBOCTbadmdmiCuObt1JIOZksL1DbUNNA4oEZ4hfdNNIxH_Q77vqS-MsMtnKYYTJU2r3IlVNPFRRsgwaAYXojFZDgnA5MUbKQ9GPP0RKAS4srf8FicyyI7Buj5UTFnKlK--EUBHRFOr_93idOwzqfdPkfZT_MKo6gbkLYW_RnOpTCC0t7zbMk7tUWxq8xkj_vV2Rlsa_JkW6JZPAFjYhR27X25c3OW9wBzMxS-mO0y26YzpoJzjDSUA9tha9Aab5s6qCBLLRHFdJSndB_Hd9WQAKTy5ZRicsAwUekg3g1s5YkB4v2Nkj0NpOGz_g5FhAy0mbIB5V_72YfngMLu44EgygkDIpP7Gx1ZI5QonSecti2DxFjErdUYNcCYaKLRpe2uMsaTdNUfbkfzF_YeVgVwC2q2OTydhJlCZo0tDBqXNIx3rcCUoV4jtA3bWJEQx0pOSKchySymEeXc6xB9Oep9Vsvua4qUBUbU0rdqWw2PetGKKV6opO15naNfO_lN1gIOn6vtXfxvFK850qPqn-pGGFQq22q8izZ_B5NRlqF42S8Lh0SJ-zj9OWl4xPmlMCAR3U3J6cSKK9Z899pyZiYEVFpEMbXB24e6707S0inRixv2fbMaE94l8CGTNqwWn-m5UljI6WrjNP02Gcno_JZ50E14Z7wNr6RmlaYmDfutkc_HK715NLmJyIUMrM5iehyfjG7fpaKgr2wJBrHaTZIM9-9Cj65l6z_i4VEh3_SnePnuF7hwOz-PQHbiws8GkoEM_eGkhrQZlaSqkMgfHJGMNZY2udf8UfPKd7mjfLg94nKgVHj2vtJSPVErqnoAEYUtcoGvDAV1CMyIInMPcAIOtzPWNOXAia866pAcUgEaiZuSfQ-UnG3H98hxpXkqzwDajo1BE4IxYDcxd-Rz3tFemHwgn8ujGwF23IL6kfrGvx-Vn43MTmtcnfLP6J6Xakot1tH-ogCa5dksQzJzmW15UHiqELoGiRRy7ns-FtE_pKsfU9cPEk69QL8tfUJ_m5qLEbpT3h-SEuegqiLm3VWRxbb-U9CJpZmXLiOvwh6SgrZlEWHvLYX9ompDNI3jdUHubVOCf-59VvcH7CemRY4Yy5IgLco7U0TF7OjoMm7BCm-psXNAu2iHy3fH3u1Ux2fVTEny7__xPyLvvERFuHGjj66VO79g8qlGGWJ15AeiQ9S6h2mZOTFev9vsn79eGkEJ0Cc1ik_00kfTBqs8Hc8ugBr92AYEBNZSK-tJR_WuAa1qTi-f1JhggWGE8-kNZvCDButJklDaRMDiUqce5o84eyyse-hP_BRkoNv87jPP6QQQ9rXJL3d7k__ObcOiwYlP1TRWBzdk_lChBTBL4RAOVeMnroH89QcS9LaOZZCKA_HEAJLwJTNZYkDeS85A_Kw98FKPKCWRY15up5o8lEgnNerFfcrn2V9n595KvxHUqMdwSmyNEmNCVlOyCpcMSuviEvHpXt_dBDlpzU27Mkb1PZbdRsWGGeGTg3ZmwXXFeYx7COqRxp1ToLJQEP4onnlzbfTfbA4_oOXvrU8a2eGzF02ZZPKW3JAgABtpor9p_R7ghLbtzMfNJqEG2XRHBVf-UfIvpb9piMzO1siQYT3FtonqOFKSytW8fbAKtKwKlowFrBs9m1PsMFwTLAxskdXPXqR2uGDZtGgwG57fqN7Vq4y0WR_AAG8CJPFWCAK6SFtBBz2cuRGC-SzajWRPmQRD1EdQTDvUxCOyXkM3K4BVLkNIzm9N3ZV-qYiWCgYoH7m1fpBBKflWFUrTE7-cemFIRhO4th3tqBkliBbvhk1UwPgH7gmpsBPEGwcQp48jHLaPi6gIO3nlhZRE2QGIQZLJiOnyPOPPAPiTZDomyQVcoHbOtOX2TSjTrWyk7dGledp2IoISpNYEcBZ-5H0QUniwJLqZIj2rwcF3pTRd9s7g_wEBUeAXtumugwocTmkLv8asjjlG4X3INO-x0sJFCZzfMP30MLUnAzfOHXdjU4mJy6KOQL5cvsizYXmrRn37DJTLDSzG3pTayUgvS3_arCcOXEIdH3g4Kd60O-NslN4ezcQjylfp7tinQAex8MJgxXyAWhTH5XUq2S0xdIFF98XZ1foAYIJKJpd4ji9VvtbYvQNCdDZGE8pGgBSGEm7-JGpqJX4sKO_ar3LOqkEvnbxFi9OeiD6q9kxtPsEyZIiLXaX66E_EI45xujCfXWINQmgveKqQnDwZ3I9hD-MIwWCJk1oJeCCBIrK4BfG2AtAPwI9ruNHu4aA9W85jM_WXbOM1YzA9-j1E95weNE58tE80PbbpzXO4Hw9t8oZVpO9GTss8vW7lPXCJE78MpArmjLvc2moN01LdFaVXU5mM5n-fc5-gx7pU-OmY0_fbetrw5wTuixQr7k261aKQ504RTKZJz-RfkQ9ypczFmQSS1YS0scbeI3xUIcM5t14_iKIUeaZmLM1n2t7xOZM9Eoi35iMCjX1RXYFTnI1db42nWBuwfnWUyiOEcqLnBBCxXQ6FTCBhbEF9Z4Ui4DbYiUqZKXMSqyOQnvIjqIi2NNayf1ZYHqRzAZtRSXDOMJjiC8H1G8ZNzJ3lHG4OB8RLtMNxA3Lb3smr5C1YRcJb_dTg-eBF3T7ezVD6iCOVn-6Qvj3tiZOhAAQAGJYCZZIfT0nr-VZGQQn3vEakCpNDSXkCJtmZp_dlSVafa-tDjJjw-6eB81cBGw7KQb8XADrFF3iOszww8f_sdtXloFItgbb2HeEFTHAvXvNvFTE02uMv39dtblPq51w3zrlrKd70QIaUEvaD487U5bgAQmfmV3yUbhV0ON3B_Wc63kZk0ELGXgMYzMAygdHh4LlAlOD5YazcZoRdf_n87Yn8almI78-I4JJpYko6ZeYqzLY3OAQiRKgXM1kzNEQiT_lEFoAB7Ffxg-Ph_ptP8i1JwyMy21xMZTLWf1BgxBmiCp4T2DQczS-eMpoKY0raizQ0Wr9lX_zghw9FdDdIblQDTZ1vNZaSf4MM2s-KbAUlCW2Ro08vo_ox28eAJ20o2Y0Lm1z2Fj-YUc_A_dROWFmm8XDak9wMlVp_o-5uz2DMMs3qPnfnDSXuAUhnYnCOPrfq80bS3K8lEn742GlAknhAjzzMqasa059GtObQS1vuIvaH_71OdjXDz_0Sl4GvJHxlGn-fn2I1PHuywUQ-RYI1GcXpY5Tu_hTIAOM24ddlczJAO46s3ya9FxOqQagRf0EqYTQX-SvwRAAK9EmYHSFS5mg8N0cAaUHiuKvH-Ji0gR0nD-kJQ9tINzLHFPyD8i50SXEAv7ffJODFIHw6BtWxvpfY1J4Nq0dWFlAFtZYG0HFo62D7MR3Z3J_6jnRqEWcRQggWuVNvToBVC9qHn479g.n6xDYCyBxzqa--22pl0EQw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":  \"{{username}}\",\r\n    \"password\": \"{{superpassword1}}\",\r\n    \"superpassword\": \"{{superpassword2}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/Admin/auth",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"Admin",
+						"auth"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Login Super Admin",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2IiwiY3R5IjoiSldUIn0..avUKvHFZS4xEg0GSRYCluQ.meYv9wl7Hf7BaVga83_Wot3c6tUzjdnvqByo4FOIBmFu37dUcK1GgMWzwhnBhUvghBydBkegvrJBOCTbadmdmiCuObt1JIOZksL1DbUNNA4oEZ4hfdNNIxH_Q77vqS-MsMtnKYYTJU2r3IlVNPFRRsgwaAYXojFZDgnA5MUbKQ9GPP0RKAS4srf8FicyyI7Buj5UTFnKlK--EUBHRFOr_93idOwzqfdPkfZT_MKo6gbkLYW_RnOpTCC0t7zbMk7tUWxq8xkj_vV2Rlsa_JkW6JZPAFjYhR27X25c3OW9wBzMxS-mO0y26YzpoJzjDSUA9tha9Aab5s6qCBLLRHFdJSndB_Hd9WQAKTy5ZRicsAwUekg3g1s5YkB4v2Nkj0NpOGz_g5FhAy0mbIB5V_72YfngMLu44EgygkDIpP7Gx1ZI5QonSecti2DxFjErdUYNcCYaKLRpe2uMsaTdNUfbkfzF_YeVgVwC2q2OTydhJlCZo0tDBqXNIx3rcCUoV4jtA3bWJEQx0pOSKchySymEeXc6xB9Oep9Vsvua4qUBUbU0rdqWw2PetGKKV6opO15naNfO_lN1gIOn6vtXfxvFK850qPqn-pGGFQq22q8izZ_B5NRlqF42S8Lh0SJ-zj9OWl4xPmlMCAR3U3J6cSKK9Z899pyZiYEVFpEMbXB24e6707S0inRixv2fbMaE94l8CGTNqwWn-m5UljI6WrjNP02Gcno_JZ50E14Z7wNr6RmlaYmDfutkc_HK715NLmJyIUMrM5iehyfjG7fpaKgr2wJBrHaTZIM9-9Cj65l6z_i4VEh3_SnePnuF7hwOz-PQHbiws8GkoEM_eGkhrQZlaSqkMgfHJGMNZY2udf8UfPKd7mjfLg94nKgVHj2vtJSPVErqnoAEYUtcoGvDAV1CMyIInMPcAIOtzPWNOXAia866pAcUgEaiZuSfQ-UnG3H98hxpXkqzwDajo1BE4IxYDcxd-Rz3tFemHwgn8ujGwF23IL6kfrGvx-Vn43MTmtcnfLP6J6Xakot1tH-ogCa5dksQzJzmW15UHiqELoGiRRy7ns-FtE_pKsfU9cPEk69QL8tfUJ_m5qLEbpT3h-SEuegqiLm3VWRxbb-U9CJpZmXLiOvwh6SgrZlEWHvLYX9ompDNI3jdUHubVOCf-59VvcH7CemRY4Yy5IgLco7U0TF7OjoMm7BCm-psXNAu2iHy3fH3u1Ux2fVTEny7__xPyLvvERFuHGjj66VO79g8qlGGWJ15AeiQ9S6h2mZOTFev9vsn79eGkEJ0Cc1ik_00kfTBqs8Hc8ugBr92AYEBNZSK-tJR_WuAa1qTi-f1JhggWGE8-kNZvCDButJklDaRMDiUqce5o84eyyse-hP_BRkoNv87jPP6QQQ9rXJL3d7k__ObcOiwYlP1TRWBzdk_lChBTBL4RAOVeMnroH89QcS9LaOZZCKA_HEAJLwJTNZYkDeS85A_Kw98FKPKCWRY15up5o8lEgnNerFfcrn2V9n595KvxHUqMdwSmyNEmNCVlOyCpcMSuviEvHpXt_dBDlpzU27Mkb1PZbdRsWGGeGTg3ZmwXXFeYx7COqRxp1ToLJQEP4onnlzbfTfbA4_oOXvrU8a2eGzF02ZZPKW3JAgABtpor9p_R7ghLbtzMfNJqEG2XRHBVf-UfIvpb9piMzO1siQYT3FtonqOFKSytW8fbAKtKwKlowFrBs9m1PsMFwTLAxskdXPXqR2uGDZtGgwG57fqN7Vq4y0WR_AAG8CJPFWCAK6SFtBBz2cuRGC-SzajWRPmQRD1EdQTDvUxCOyXkM3K4BVLkNIzm9N3ZV-qYiWCgYoH7m1fpBBKflWFUrTE7-cemFIRhO4th3tqBkliBbvhk1UwPgH7gmpsBPEGwcQp48jHLaPi6gIO3nlhZRE2QGIQZLJiOnyPOPPAPiTZDomyQVcoHbOtOX2TSjTrWyk7dGledp2IoISpNYEcBZ-5H0QUniwJLqZIj2rwcF3pTRd9s7g_wEBUeAXtumugwocTmkLv8asjjlG4X3INO-x0sJFCZzfMP30MLUnAzfOHXdjU4mJy6KOQL5cvsizYXmrRn37DJTLDSzG3pTayUgvS3_arCcOXEIdH3g4Kd60O-NslN4ezcQjylfp7tinQAex8MJgxXyAWhTH5XUq2S0xdIFF98XZ1foAYIJKJpd4ji9VvtbYvQNCdDZGE8pGgBSGEm7-JGpqJX4sKO_ar3LOqkEvnbxFi9OeiD6q9kxtPsEyZIiLXaX66E_EI45xujCfXWINQmgveKqQnDwZ3I9hD-MIwWCJk1oJeCCBIrK4BfG2AtAPwI9ruNHu4aA9W85jM_WXbOM1YzA9-j1E95weNE58tE80PbbpzXO4Hw9t8oZVpO9GTss8vW7lPXCJE78MpArmjLvc2moN01LdFaVXU5mM5n-fc5-gx7pU-OmY0_fbetrw5wTuixQr7k261aKQ504RTKZJz-RfkQ9ypczFmQSS1YS0scbeI3xUIcM5t14_iKIUeaZmLM1n2t7xOZM9Eoi35iMCjX1RXYFTnI1db42nWBuwfnWUyiOEcqLnBBCxXQ6FTCBhbEF9Z4Ui4DbYiUqZKXMSqyOQnvIjqIi2NNayf1ZYHqRzAZtRSXDOMJjiC8H1G8ZNzJ3lHG4OB8RLtMNxA3Lb3smr5C1YRcJb_dTg-eBF3T7ezVD6iCOVn-6Qvj3tiZOhAAQAGJYCZZIfT0nr-VZGQQn3vEakCpNDSXkCJtmZp_dlSVafa-tDjJjw-6eB81cBGw7KQb8XADrFF3iOszww8f_sdtXloFItgbb2HeEFTHAvXvNvFTE02uMv39dtblPq51w3zrlrKd70QIaUEvaD487U5bgAQmfmV3yUbhV0ON3B_Wc63kZk0ELGXgMYzMAygdHh4LlAlOD5YazcZoRdf_n87Yn8almI78-I4JJpYko6ZeYqzLY3OAQiRKgXM1kzNEQiT_lEFoAB7Ffxg-Ph_ptP8i1JwyMy21xMZTLWf1BgxBmiCp4T2DQczS-eMpoKY0raizQ0Wr9lX_zghw9FdDdIblQDTZ1vNZaSf4MM2s-KbAUlCW2Ro08vo_ox28eAJ20o2Y0Lm1z2Fj-YUc_A_dROWFmm8XDak9wMlVp_o-5uz2DMMs3qPnfnDSXuAUhnYnCOPrfq80bS3K8lEn742GlAknhAjzzMqasa059GtObQS1vuIvaH_71OdjXDz_0Sl4GvJHxlGn-fn2I1PHuywUQ-RYI1GcXpY5Tu_hTIAOM24ddlczJAO46s3ya9FxOqQagRf0EqYTQX-SvwRAAK9EmYHSFS5mg8N0cAaUHiuKvH-Ji0gR0nD-kJQ9tINzLHFPyD8i50SXEAv7ffJODFIHw6BtWxvpfY1J4Nq0dWFlAFtZYG0HFo62D7MR3Z3J_6jnRqEWcRQggWuVNvToBVC9qHn479g.n6xDYCyBxzqa--22pl0EQw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":  \"{{username}}\",\r\n    \"password\": \"{{superpassword1}}\",\r\n    \"superpassword\": \"{{superpassword2}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/Admin/auth",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Admin",
+								"auth"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "GlassFish Server Open Source Edition  4.1"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Servlet/3.1 JSP/2.3 (GlassFish Server Open Source Edition  4.1  Java/Oracle Corporation/1.8)"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Expose-Headers",
+							"value": "Authorization"
+						},
+						{
+							"key": "Authorization",
+							"value": "eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2IiwiY3R5IjoiSldUIn0..d-cQT75q2bM9Z-VmOZ55ZA.tHH0GXF27wH7sHGWD6HOveGwDPtNYJmY8dnvIbWfRR8SoRKiuLKvVoCnS6y4Jz5lRzkBeJQz3U6zABjJZ9PcSxpsPHWQ9iJRiPZEU2qUw5ZOqJVNuyqWbYU5nFBeiUaMJETcCb7i1dxttuRJ0FEYS5zq4AM4U1NwgmJBGbbFPk-W4yYuUaajmBfqQMU8E0bvD0k010bwBU10pF7jIBx3jtYCSy4K2YHifVhiOjAVFpNEpWjeZO-vAFDUmBU_tjqJ5ztehfjOmT_ekT0xTXyClvaYhZ9D32zmBsztqttD_4wwny0uIdiq9Nn-IvfOW5gwEGOHbTLQ0F2knJCXR2rNNlqO_f1CvmrhhKuemsST8SjJLDQBak6nvpzataDTTPwogy416jN146i8y6C8CLM0bNZX0ihHzyFMvfLLE6KKJ-BAR5fTd3s9BBI_GJ92BaA11m_tyYmV6_O_AsV7biy4oL7s307vX-jKjD-hpMuzoKLGEs-dCX6JplYjlKGjbdYCT3eEDvfoeoZ2uT-3xIwV0WMwJ29nGgciAXd55kIsztpVM0Kn7kdlGEAjzv-acQDwjZJ8KqZagJsbfPP8E6LKU32-dlW2t0J2MwXo3W34iGUI4-Qglbw1rkOpb31dx-jMsaEWZitxfM6otAIucfdZXJ9lQuiU8YDi66Y1DTqHCLVYRKBTEKXmjlq5LVdCr-wWIpYVvL1ExBPA_2qUoEqE3yxPiRLec_CDzwnkdWYXeHRODNsRRcZuHhbFJGBNOjVTzhRqd1iIY5VbcGzXtJHbVWYZ7P8vODdIX8K06NM2inyXhOyijdJr2WvLBsUd_JQIAgHFzXyqqrnxMNfettv2YiwzrzqHBqzALA_mfAthWLunWrWx1TEedWJMW1iDYpg99IQBKvFV_lTgaC3Gmff4kGrFvZg8pHho9IOlbDTAalC_Wlc21ENkEuOtvA3V-F0_roknIPrPWjaaS9TjTBHPHEtCnXEn9GImLm2TBh0v0sEKnybVO_Gu_Dk9WAnOwOUS3dqt3mOnmriv_aJZd-6C8k6sFLupZoK4IpeG7StbupzYUpRDnhkWqFZQaEqPO8JdJTLexh71nC2pU5DO230MzbuMWEP4Bzo39UAFYLpaL5r224IhshRmjDly9P6HQ3tFcG78zN2lcYaTRdX68_1KNJX8RpYCrFlKUEmX4dgiA3fDDl1KCObMOA9NxpyswY6RbMcD91LAJfNeS_rfX9sQivjW-ppdWoFw-O2Si4DzR7a4N_eoKMFBpQHO2xHRpr7ULEGrGQ13nZ1ornBwInBwCDepuaKu7I47o9VD9y7po0i72VBD1kD-33uBbPGXpq74hsigtZcfbcRR65Lqfu_Ay23E11tfF1uDL4N__1RwcBsdBHyLkkxJ4O8jQ0scY2D97dRytpETb4E6w_caRwrag-uSl3D128_-ES7V5Wm9kanD8VN4evzQzmaOO4Ruz7-193eA_e5-QiJBXH-NNXTvjCdDCDvijiOaSYC43cPUhVt_J-TnDBBY__XnT6pgvX2SjwGigqFsx0EJVunkcw4VzPNUioTCVhEyOLRxiwfDCaTFJStxb-k3-uW-9obVA42J90xLpl7NH4K-X78I8CgtTVS3fr83Rlg-LF9NHSX9lo7Tk9v4JS3TjDo2tyzsk8KAXrGNnG75-zrPxbr33KrVPZilXNriC-LTht96OVKykzP5gjdMWjo1LyU-bzgnOc00xE7ewQC-pClmgOzl6f36qbw1zQFKaQ-4VtpE0mDYZrd7yU7tWF1pnPK6ddmCIoVHJaLNPiEmB-YUbExFYUOKaJSGwCMTGZKK-EhYjnVJ3lM7g9j2zSQh8QWgn0xmh5X7qkDh2rxbD3p1YeXWN5CHlX_N5ljG4j88qMC3Xpln7ytulVF40g-D4akI5Jd5fl1S-jFJfz_AXeMEllwnhtI1tQjeyATzY148nSRvZnXVgLQsUK2y_cccXYiHVSkkM98BDzcR_Gym1S5P-bh0kdWvoUdwaUtL6EYyH9_EBZnuHkGdbvidBHyr53F1S12uWbJWwaFGle8qpafmRiAlt-1WyVmixi2g_djf-_FCIIb-owNRGHQXgf1h7vkUL7RkNBZVqF3VjNLCDZkg_RB1AzdDuO3Z6g_DSdQTmPFbRyYo7vXVNWvkVojV3dpiYeszMjq2ElGoJmyB1CVbgcFRbQ0GJirQJ9UenK-rxBetiNj7JkAauO6EqQXNK7xQX-JPfkXPpwWsb69jnEIhedu2f1solA2Pt0U1HTUdN2icMK4paUcqYtRpUwyw0Rm8Zp2L6_YXM9HFUJv4Cymu_Oafydu2hNL5gSS9rPn5cyJIylEjQKBu9ldr-CKmtYId2S7ey2BVkvU_ayHdvIvszNWNNjdVwCJDykfHDv9UB9fXxgWYfoTK_LDAKVkrmrERbUxW-_VeSqPYu1QG49emeVEvxXPVZnTlEKvTBmQXS-Dd0Nu1SegyHgomDL2gpzUgqWc7qMokhJBbZKkRqNtIJAzPm_KQgvAJVUDEK-Sd9-_i1bHoMEERiI-Iky9ojxq7Nir-6eKFvRKDRnm2W3RRjqCZbobLa4k8hz7upQzDFnV3hbTAJ0GOq3bDFzz9yJCeJ6sGxGnhQd2pXe2AtnSXuk9fmpSPXXwzQqilPu7X7bNjrfwxfF7o2FtqIPkg9Xd2UOZClaEaPxH2d6wAZLBbXd7eKyY5vAJITZZiZ7uYzhjwTtS9TzvFMqdl_lmz46JDNNqdFaoVH7r4a7nnN5VcR7s_Uw_6Yn1HR_TpXhej4ANIbIrilYswTVlnsbAsqIniPZ1KLU3SwkyKiWDrEujMu81gXqZmEeazw4kEft_S8RpQJV26n5bK5if4GYMy3vPoNQhLwY377Siv_Z1t5G1cLequdIdr2gR_xFIiecGlKlMGHXCYaGuLl8c8Lolxy0PJMlM9-sqTn4xb9i2884Tm6kAG_PPX4MXIJXZVECMm3qZMiBcBGTt0z4KNxotn1q20IfjhDTL0HNUUyDyOa-FIL0CfZZDjwkhxYUeVZSOemOyZpEQHyY4FwgpyJLj7DdPPSHdkvpMGtbbv1ClNV3IMGB065VJT9wjJu1OeXnnV00MzhqCi-sUN8RdxozIPB0UlvV6HXpBufqhfJzJ_ZuadC5Gk_g3TmBvTSRcAFtr_o0p12aY3hQbRhrgxZFlQDTC9jd4hZ1i8j5FG4kb2XR-nFQ_YT7kqlgsGCYOVbDw7sT4UfvTU2O4AWXnRBz6c-UtJ9VqbFjzGCVA6oPDb6kDiwAUPJrS_nIshwxscn3JPjZtG2EodcoEj9an9VIYY2vz5J2QUnrIYXdMe2NnOxKILWV4p5Gh8LF6Y0F5krU-DlsxzpeEctSk6clY3ic2gBRuwzVh6fCxRRTDCHf8lR52I_dnktL8RGhc0VDdzeEDdCc-VFBDgQyLW5OvMohk3n-KIXcKShnJ-.GgZK4uFLLmkz9g4h6AD-jg"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 31 Jul 2022 09:00:43 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "8"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1\n}"
+				}
+			]
+		},
+		{
+			"name": "create adminA",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{Authorization}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": null,\r\n    \"name\": \"adminA\",\r\n    \"userName\": \"AdminA\",\r\n    \"passwordSetup\": {\r\n        \"passwordDelivery\": \"SETUP_NOW\",\r\n        \"newPassword\": \"Avishek1\",\r\n        \"confirmPassword\": \"Avishek1\"\r\n    },\r\n    \"address\": \"Main Branch\",\r\n    \"mobile\": 9843441744,\r\n    \"dob\": \"2022-07-27T08:39:58.436Z\",\r\n    \"email\": \"aveeshek7@gmail.com\",\r\n    \"branch\": 1,\r\n    \"adminProfile\": 91,\r\n    \"isCentralController\": true,\r\n    \"sex\": \"Male\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/Admin/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"Admin",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "create adminA",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": null,\r\n    \"name\": \"adminA\",\r\n    \"userName\": \"AdminA\",\r\n    \"passwordSetup\": {\r\n        \"passwordDelivery\": \"SETUP_NOW\",\r\n        \"newPassword\": \"Avishek1\",\r\n        \"confirmPassword\": \"Avishek1\"\r\n    },\r\n    \"address\": \"Main Branch\",\r\n    \"mobile\": 9843441744,\r\n    \"dob\": \"2022-07-27T08:39:58.436Z\",\r\n    \"email\": \"aveeshek7@gmail.com\",\r\n    \"branch\": 1,\r\n    \"adminProfile\": 91,\r\n    \"isCentralController\": true,\r\n    \"sex\": \"Male\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/Admin/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Admin",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "GlassFish Server Open Source Edition  4.1"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Servlet/3.1 JSP/2.3 (GlassFish Server Open Source Edition  4.1  Java/Oracle Corporation/1.8)"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Expose-Headers",
+							"value": "Authorization"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 31 Jul 2022 09:11:01 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "76"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Admin Successfully created\",\n    \"status\": \"Created\",\n    \"statusCode\": 201\n}"
+				}
+			]
+		},
+		{
+			"name": "create adminB",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{Authorization}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": null,\r\n    \"name\": \"adminB\",\r\n    \"userName\": \"AdminB\",\r\n    \"passwordSetup\": {\r\n        \"passwordDelivery\": \"SETUP_NOW\",\r\n        \"newPassword\": \"Avishek1\",\r\n        \"confirmPassword\": \"Avishek1\"\r\n    },\r\n    \"address\": \"Main Branch\",\r\n    \"mobile\": 9843441744,\r\n    \"dob\": \"2022-07-27T08:39:58.436Z\",\r\n    \"email\": \"aveeshek7@gmail.com\",\r\n    \"branch\": 1,\r\n    \"adminProfile\": 91,\r\n    \"isCentralController\": true,\r\n    \"sex\": \"Male\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/Admin/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"Admin",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "create adminB",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": null,\r\n    \"name\": \"adminB\",\r\n    \"userName\": \"AdminB\",\r\n    \"passwordSetup\": {\r\n        \"passwordDelivery\": \"SETUP_NOW\",\r\n        \"newPassword\": \"Avishek1\",\r\n        \"confirmPassword\": \"Avishek1\"\r\n    },\r\n    \"address\": \"Main Branch\",\r\n    \"mobile\": 9843441744,\r\n    \"dob\": \"2022-07-27T08:39:58.436Z\",\r\n    \"email\": \"aveeshek7@gmail.com\",\r\n    \"branch\": 1,\r\n    \"adminProfile\": 91,\r\n    \"isCentralController\": true,\r\n    \"sex\": \"Male\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/Admin/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Admin",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "GlassFish Server Open Source Edition  4.1"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Servlet/3.1 JSP/2.3 (GlassFish Server Open Source Edition  4.1  Java/Oracle Corporation/1.8)"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Expose-Headers",
+							"value": "Authorization"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 31 Jul 2022 09:11:38 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "76"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Admin Successfully created\",\n    \"status\": \"Created\",\n    \"statusCode\": 201\n}"
+				}
+			]
+		},
+		{
+			"name": "login admin A",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"var auth = pm.response.headers.get(\"Authorization\");\r",
+							"pm.collectionVariables.set(\"AdminA1\", auth);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{Authorization}}",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"{{usernameA}}\",\r\n    \"password\": \"{{password}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/Admin/auth",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"Admin",
+						"auth"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "login admin A",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"{{usernameA}}\",\r\n    \"password\": \"{{password}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/Admin/auth",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Admin",
+								"auth"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "GlassFish Server Open Source Edition  4.1"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Servlet/3.1 JSP/2.3 (GlassFish Server Open Source Edition  4.1  Java/Oracle Corporation/1.8)"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Expose-Headers",
+							"value": "Authorization"
+						},
+						{
+							"key": "Authorization",
+							"value": "eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2IiwiY3R5IjoiSldUIn0..2c6rtuNBdFkOeErONG3HDA.Vk5BIMe6jsFVi1V0R31ykwBv_5sn7k52IVF6ffSDukPa1Ea8SrF75iP8NbHVxZqOC0uv7CnP7cq4XDtH20hBBvb6atM5ApZB55EI_E4A_GXIHsMWPm83D7csSGT5o1KULAxbJ5JzdpxAdndAwZySdvIZ0jFXeUQuZutpyyfbL8mAvmyIJWwNyR831ywh-3kd2NKEg2UvLUu9sbvfdIBrp4HWof1PjC7dPcPICxqn6oDYJYbrE_frVqR95nzpdjDCpsfWonTVije7ZpQ3XX9DK0AdQaEE2FODn7GvnjYmCIoMTppo6lZvPfOa8oCQDd0sqYWkzQTqZRV_tQB8kAyEvFRcHCQYSyIBy7imkGTUuA6-7us1lW5gmR9EaEZPQGCAO0k3vzppZszQlJgUkHQ_wAtwMKS5R9sztuIsrkswergI7RsJ7n0siUo82FjvSKidKpYuygpHIAX3zDxTfNZd82okUS5dBGd1A6HlbuLrev1YYwbBqyArG38W-ewK1nvFemCK3Za6q-fzv9uSNCw0l42BYH-yPDsGJnyuBUOXS164-hvm1ZVlqYs_FYXCoD7fzia7QOExNv81lPGqdKff9A.pXoNedmX5-wk7CzxwNcIvw"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 31 Jul 2022 09:11:51 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "156"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"First Login Please Change Password\",\n    \"passwordChangeRequired\": true,\n    \"isTwoFactorAuthEnabled\": false,\n    \"termsAndConditionsAccepted\": false,\n    \"id\": 753820\n}"
+				}
+			]
+		},
+		{
+			"name": "change 1st login pw (adminA)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 202\", function () {\r",
+							"    pm.response.to.have.status(202);\r",
+							"});\r",
+							"\r",
+							"var auth = pm.response.headers.get(\"Authorization\");\r",
+							"pm.collectionVariables.set(\"Authorization\", auth);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{AdminA1}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"currentPassword\": \"{{password}}\",\r\n    \"newPassword\": \"{{password2}}\",\r\n    \"confirmPassword\": \"{{password2}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/Admin/auth/PasswordChange/first",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"Admin",
+						"auth",
+						"PasswordChange",
+						"first"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "change 1st login pw (adminA)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"currentPassword\": \"{{password}}\",\r\n    \"newPassword\": \"{{password2}}\",\r\n    \"confirmPassword\": \"{{password2}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/Admin/auth/PasswordChange/first",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Admin",
+								"auth",
+								"PasswordChange",
+								"first"
+							]
+						}
+					},
+					"status": "Accepted",
+					"code": 202,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "GlassFish Server Open Source Edition  4.1"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Servlet/3.1 JSP/2.3 (GlassFish Server Open Source Edition  4.1  Java/Oracle Corporation/1.8)"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Expose-Headers",
+							"value": "Authorization"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 31 Jul 2022 09:11:56 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "80"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Password successfully changed\",\n    \"status\": \"Modified\",\n    \"statusCode\": 202\n}"
+				}
+			]
+		},
+		{
+			"name": "login adminA (Again)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"var auth = pm.response.headers.get(\"Authorization\");\r",
+							"pm.collectionVariables.set(\"AdminA2\", auth);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{Authorization}}",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"{{usernameA}}\",\r\n    \"password\": \"{{password2}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/Admin/auth",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"Admin",
+						"auth"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "login adminA (Again)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"{{usernameA}}\",\r\n    \"password\": \"{{password2}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/Admin/auth",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Admin",
+								"auth"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "GlassFish Server Open Source Edition  4.1"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Servlet/3.1 JSP/2.3 (GlassFish Server Open Source Edition  4.1  Java/Oracle Corporation/1.8)"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Expose-Headers",
+							"value": "Authorization"
+						},
+						{
+							"key": "Authorization",
+							"value": "eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2IiwiY3R5IjoiSldUIn0..h_c0OoqvJ7SjaDIdBuxQtw.gtpoiZeqb0Qux63BRXrLb3Lw9mwK1qEB5I2Z7JcX9vNk1ENvASN4Xdxj0F4iJGE5dRq3iYNDVbaSOJPTnJhCY4A2-u92jfSi85iHklpVKUHU8EPvUy9HvIAWDC-CTBkR4x3bGfFt6vaSJ1J6BmOD_5kv9tZaxTS5oBwILbRlc_VQoB59Rz6I_e6xyypB0Ax68A8o4bfzp2GpusCCRw1A8ofK812R95TndzK6SydRPZ4BpxdT8qFwgJY5FAeEq4ejqJPLW06DECFyI-5z5hVuq2tUvJaUDCndo7MVIWgSM8_FL64l_aY89mByisak1H9zDDc0XN_mBE7aAfiLIxjBH5_iKFKLUiRE_y4KUvX91vWEyLXm1AVU3Zrl3rWsdcBD2M7SYbF_SlRNGb_NaiFtLHNIYa7Z1f4pQk0wgrQAa6sLRTVypC-alxVnvOEUQsAgQ4aODggiY87dRz_bJDq1RzVSz77-MGx7JA7z7SRJ6YI-CU1NoVVz3DR46eJ3b5b96XfR44nS6jQZRJ-wtk2y4JgZweVQUOzt5Wfv_ZK2pvDStrnAMss3n5iWcYw7F6XWVr7vSBPlQ6hun5rl-F1HcBCizJ_xp9c-hPlXbe7Z6IBOPuayAHmd67Bn4RIKvHzzRy3wNO8GERE3NOQksIz6FKa0HcsrocBYLVXWK7-ZxHTuKPydVjtglFlPv-y8qHR7dlEs00OsQD-Hkz8BZwOw05LWAsUSMo6J1SJ5IxftvWDlCN1UsLf-O5rmAP2V7P4dxElxBNvdexFxa8hCQZ1IJDdy_cek93mxzgnh9a1ZJ0wGJq7jqpSRMokXHNAJV0WuZHOkcai1QoXMWWuVfS_dbTxJSsAJiFfVzjv8LErfZF2FEdeVj1UKG1COMd9VLpJR-pNDJyaBbs5VOSJwRWswEQ34noBMLhoKZabKzJSy5wXch4i4BcQW-_Jw4q9wuQByW2E19zUyMa9MjTA0fDSZ8FL3ulUQtLoLaTeP8Aa0EvUxGVPTcIn17cTuraFiJ8so2hNl7nYTyP9WbyUKYKsaynwdj9fxNuU3uOJf_ZRQ5NjM4S3-E1jZBS_TiFzXRMRNYrI-QZ9ccPE0s1hs2wqdMyIJBX-z2_wT-DzVr749PPsoTIUvbShTfl2FzV09N0HvKA69qybXvm8dtb4YlzCkyNHateH5fpvy0gKcJsbtCizfwwW1gU-MHCNuQnzgSyGvb7diyfUYN3TzrUePrELtl7W-VxAmeE95rJdIOCDOEScBkWwM1trPF9tc65sS0hFvu95vLgRmJxnvCxSpwYNbLZTtqgn1PZO6OrjR4Vh09iiV6bmv1aNA4vnzP5bRbbXjOBYDeG28TSWTKsgii3Q94OoHrITSagefka-pMni0h2RFTx02LvcSTu4-qx5Tvk4ARkrhVTL0-T8bJHPO4vBBxxGXUhU0EUeDKtmDyOj4FR5NDb5Sofa6PEcAkIFwF2-v5w4GtIzULxj_tJek2E7NNCuk9PPReJhSxDQwUoWyYMoYiP_rfDzxnDmZW4u7uSFAB3ygy31z1sj7WuaNUGxHz-zzdswkQvdEBQwmyqhYjsvVnAmNrj92JM-oqmmt3_70Rsh4_VsO4fw7j0Ji8QgGXjNeQ9ahjzghtm21sIxI0_CxCz35C2dNRyMmgMDEtRLvCmrFoqCmonPhl2DsKDW-8dv8XCUkSVbpTn092sRzb3IipsbiSVGGdDQ3Gg1FuYeh39BVRKnrmcVYo3FX1uxncxPIC8UpVRR8s2dcqVvaOtHQ6pofGwYFkTHspdr_PNlDqRY1syh92DKETtjCIcGRBgfWDiW2uQtEQ_V9XbPlLb7OtikxqnJHpsJwvw8-BZgqw-IyR6GvJi37hgDq6bUBubaUN5fl14fGLibxSoQ8pFtPPf29ak1mtnHdSyvN0xbW7s9k-Ae0qRNHaDMgJjYg7JWjbuUdDxP7RxznDaw41n-1z12_zqB9wctNFrmmJbfIH-WmC_gsCwKj1HJJXMAg98ebX-wEC6oTJCudN8G4moftHXEqtWSmNCLfNWaBptnBwrge4mByjriMxmuaQ37cCQ9rpz9oR5QL0QlgQuYRJU5N2hrDEtD3ZaK15J8q_xvO7wSxcJ2HN389PIh9n0wgpRXDpA5K5gW0wtb9gPXJ8BaVq8wKb6EJPM8FtyCaebY63OK8YAM71l2kqM1FIZ1bKJIDIjRYe3OAoVCWQHbyRX_lLUIs5UNWxXPSyOqmP-_6y5Fxqoj5R8_f3-NsuQjpDT16vO72lh1lWCfQUWZ9JZF6x00vLe8_nxOJlQfnMYdBUVHXQHqhWe8BCgKsnUHBAOEKGv9RSgZ0Yk413aofjV2u1dSIbBnEQ46mtfeufPrjU9QfuconPA-Z0vlJ2wR1Qsyk5x6TH8__6_Fs0lgEWN9Rw6W2Xr0fMvLFjjTpCufsfW6i-OsjjqMiW06BI3UtSraPot1vAifoP7Z2u9-lgxMdGclyu6nsdbhcNhcKwGSrruEdDHTyYY162W5ITuMlVpOpDVKZj026osRt6yghLupVPPDNYaOssFWtBi0kK5RYTkmPxRtk8D_aT4w_DWNBV3UyqKcr3XMp-j5m1CLA-dablgY9XPpCXXG6TGjG5uS7Aoy45wEzBVILFF1x0ZTujZNJZGB7dHjO4g5TiM954MYu1acyZXoprpY_4tPA88UCwUiGOOILAF1NjKM7Lk2Vad8JfSJxnVRUcm_eo7tDL300GM9xhorRdzLcBU8RrKFg5W846MNYullN0wm2cCHRsqRtIs8JZS0OoRXPyLPp1jBYOQRS1vLw7-p1XXnTFtNQA-G5CSuzHoav7vFi2IB4kGykOspmR0NiXcpbT4RRJsiBR8LdvmqLut98INe6isbQ9KpRnu0Oj3HOipl2ieTfUHCzFFlfh6RK71Cuo1NbDByUo_jiPWhdX9upyJ7QZSUuNheVVrGBLQ1Fb7TJ5uJkup6k86jK8SDxq0-roNJ2n5hkiRW5TH158j77r2zc1jj8iySfouvG546sdHg1_zQEWUSBkdj8J0BtlSlXtv2MKNob36oz13jtaJqSZrLgoHR4kFbWkArc-Q8m0b45A4KaVabf7EMQ_pUgYh15m9bTxbbBsl6mCcXyw2vVBVcrLIC80LgBMZTrhYIS3gjm-iPrFHFBMeAw73MRfvngWO7ORJWKkr6h1xJAl7so4iAPZZyvnlgl8HVqqT5xNgdZsO2MvQ2VyrDUYJBCInnG1YDy0uqS0ZUiJWNbny9wAvHgd8Gg7hVE6TeU1cGP8CMT16Z4pcY8IJFezti0oxC3h1tQWTDlmh2ETyWRNgMBK_sAU37xW68I41X4oJGnR35a1AmFDalgyxQJ2MQa18omOKcI49U-z483r5Y5llhU5cKU8OxryW7o7B2Pg9JEkcwjGUPCgw.fLYxhhjZZ7g8qQ0anFTVug"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 31 Jul 2022 09:12:41 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "13"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 753820\n}"
+				}
+			]
+		},
+		{
+			"name": "login adminB",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"var auth = pm.response.headers.get(\"Authorization\");\r",
+							"pm.collectionVariables.set(\"AdminB1\", auth);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"{{usernameB}}\",\r\n    \"password\": \"{{password}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/Admin/auth",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"Admin",
+						"auth"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "login adminB",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"{{usernameB}}\",\r\n    \"password\": \"{{password}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/Admin/auth",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Admin",
+								"auth"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "GlassFish Server Open Source Edition  4.1"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Servlet/3.1 JSP/2.3 (GlassFish Server Open Source Edition  4.1  Java/Oracle Corporation/1.8)"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Expose-Headers",
+							"value": "Authorization"
+						},
+						{
+							"key": "Authorization",
+							"value": "eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2IiwiY3R5IjoiSldUIn0..31gXs5RwcCqaujNqkMsdgg.ntYXxziAAwaIXg9nV3E-kXwwwPxRKQ8lVMUIz1RsaCWZT9cPtyFHrI_TndnSgYskNgurCrpZPszr7iDHCUv5YINP90c_dYhAEzE2U-UA6Ib-rJuoaFmS561ylK1hyej5rVH8f51xX5VOZhU_bVX-54uN8_5u_iy1aEkhOydhhqiuNKpXnAE9qrF7mScQzI00klQDywyBwJSYoWG_KwwcwwVe9IVfhopTHxNWr6_UYWZo39e-s00NF4xDa41oLDGXh-8SK4U7MUDa5K8c7tyvmCjisKQd1pfBtAfQsSYLJ-ZiQPuEJD7mD52IHhQU1Z6gmmiAu7HJM_wIK2TP7yWtdldY9dpmSkKqf9ZWofyNaLfUpMPaZLVsRukLzhKvZc45ZTN75tgGyDikjZbGIpInpKxsFL1hWr-mKJY8YwMDYfNSELjr9_onlTGdrNdsw56T9vyFf8y0lsne-IoGZHR22IXzDZbNWpF7BvWY7WgBJX8RLjHPyyhtWiHlgyXZ14tyXrVxaytLpECoq-Z6VeKDuhq8YLm3jQHlMBni_tNyB4EEjCisnfuJ-pRqBjo5_ZVe89wQlCx4koaoWWy7TQ3rIQ.ABX7gpUPe9oYXb7YbcZMWA"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 31 Jul 2022 09:13:06 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "156"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"First Login Please Change Password\",\n    \"passwordChangeRequired\": true,\n    \"isTwoFactorAuthEnabled\": false,\n    \"termsAndConditionsAccepted\": false,\n    \"id\": 753821\n}"
+				}
+			]
+		},
+		{
+			"name": "change 1st login pw (adminB)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 202\", function () {\r",
+							"    pm.response.to.have.status(202);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{AdminB1}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"currentPassword\": \"{{password}}\",\r\n    \"newPassword\": \"{{password2}}\",\r\n    \"confirmPassword\": \"{{password2}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/Admin/auth/PasswordChange/first",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"Admin",
+						"auth",
+						"PasswordChange",
+						"first"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "change 1st login pw (adminB)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization3}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"currentPassword\": \"{{password}}\",\r\n    \"newPassword\": \"{{password2}}\",\r\n    \"confirmPassword\": \"{{password2}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/Admin/auth/PasswordChange/first",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Admin",
+								"auth",
+								"PasswordChange",
+								"first"
+							]
+						}
+					},
+					"status": "Accepted",
+					"code": 202,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "GlassFish Server Open Source Edition  4.1"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Servlet/3.1 JSP/2.3 (GlassFish Server Open Source Edition  4.1  Java/Oracle Corporation/1.8)"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Expose-Headers",
+							"value": "Authorization"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 31 Jul 2022 09:13:16 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "80"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Password successfully changed\",\n    \"status\": \"Modified\",\n    \"statusCode\": 202\n}"
+				}
+			]
+		},
+		{
+			"name": "login adminB (Again)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"var auth = pm.response.headers.get(\"Authorization\");\r",
+							"pm.collectionVariables.set(\"AdminB2\", auth);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"{{usernameB}}\",\r\n    \"password\": \"{{password2}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/Admin/auth",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"Admin",
+						"auth"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "login adminB (Again)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"{{usernameB}}\",\r\n    \"password\": \"{{password2}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/Admin/auth",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Admin",
+								"auth"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "GlassFish Server Open Source Edition  4.1"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Servlet/3.1 JSP/2.3 (GlassFish Server Open Source Edition  4.1  Java/Oracle Corporation/1.8)"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Expose-Headers",
+							"value": "Authorization"
+						},
+						{
+							"key": "Authorization",
+							"value": "eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2IiwiY3R5IjoiSldUIn0..K6HVqrpH7cBy72Ec06NYrg.QE6_SkD_-2476ymr1h2Oze6IxHH7GBvqg76YD7c79J32huiHuwesTA5unp7hLeHnxDTP2K1KzsLDgYXNix4pjoGVRazkq4o6p3ahBjy8I5LHO5wI2UG63CHimTWgAul9Uf86rrH3F1gveDG81qOXA9dvh-GKfiQXw0PqTj9HtNu0MkMKvN0_kDu24c_xqjpIxWjtJZyaenIoPfHr75cmGiEVNzbj7vVRadC8JF4zxnHljP2lnPH6J39_VmfGMuTbt5uJVMHCAK_mCA_yANUqiRcnzdCADpFtOvmPaphptG49cObJgNc49MXRbAnPB9rYV9V8sehCyjs_NRTjH_HUdlxzhm-HbT2lqMA8BMW2r8-h2MK7O0ysi9xNhT07t1zTdOdLJ6I9mdIl12FyHINGwVY3bRlSGTInbJg6AxrVPP_wbFmFRceaV3yKbLQRBqXWzoJ2eX2AxOWYyfa080-CVmrcXPQu18J6cOX58RkjiXjw8HvYuP8wVZPFpVWzBjJFDr7Er1ypD0_BPsXNCmtOly50n_xI4ssf3qYYHdHW6DyPjc-G1OOz68fNLaGfC0DyHaxVL60NnEqCvUoaglkNaatjH9o87INKqKIFYX9fPZKZDLSnphp4r85AN0iq8EzxxbJFKyGwQR3cDA0kekaY4zdupPBitFoczwfOdoph10PtxRyikJLxafdNKtVW-uiYeYfBI784l5RI4MlSPuqKgImGt-zB76Hasja1V6QBBu_JbpZicAb29Pzc5orSH6Q4VUDGJ2JLn_qWrdj9Va6-9LUgIdYqyAQ-camJ_KfKihc6vLhcGHvCSM01Rux0qEQFn_QMpH_9ALq4d6tIAGQRta616SdYHqbweg63XsC_RyoLyKjlhxtkyXWI-pWoxJHr6FpMLCpSls0KaRj1oB4CBZdj7n0grqg2_dc85Zm6zB0qVfRu5z3Yp5V6Rgr3jQ0x3ZPiRB0n1GtcUEXN3CKpGkXEpYU3ZNPDD74Vrv_gPjcJJEokj1KHbjI5Xj-YU8rcPw6I2CTICK76Hz71OuTIn07oCY1a_sFKeUPL2ZLbcbrmyqcz2M2UlGVBnKWFwto85nFul4OxxWPQS5gdf-1GB4xcZKeqHl2w-59PSckUpcI9dSFxiR6qKJnajUyVtllHlhrymeka9Brvve5St2453BnEKaCOe_dNfqZmj3IDh7DqpC2lvQJfMYmwTte2KSXRAobUJjBUz65B2sRjaCajhUbNn80W9VEenMu0UAIcbTyhVhjUSw6RqFGOoJaZml18jGSPaSxJuHJqHQcDk4UVzH2XGLeUgDef3O48KEMG4XMJqTJHoxIMCV2xVX2nERM7vSaSsTTOVqyii48Ct8QCS-G36SkCa4z7HYwgATrkRX4yAvCJyY6GCZesHu17HQHHuJQa3I-cHgIoncKA2tA_I-zhg9GpUwf4enXCCd-wD-sYJ6D6luo9hbt_YNzkjCDjc4IIL2M9M8X5HWwengrYx-EjHD3KULxhdwvUDFk6uZPofPredXXIF0IMzjolKur94ZyI-C8BoQX5VBWfZcdFhrxlY1jxyZ_JOtMOjVttwtonrM1OYyYmSbW3-8V-riIn6bYqhcuPfXHb0OwGN00YT1-ur1ZAvx19_dAbNlmqGPxO-ntZhElsvSW6jD3LI8puCm1D1FeNI7JM-YzttDvOYLd9h-9Wc6Vr4PBNOYs84NmjMe8DK_z3IRbHVS7TwSeus8u6Dd2zpixm8cvAigextyEj9EyOah73zKMgHPGVkrrlrDTHRN6hKiOjiZUepKdEx3nb9taSTpzkARSZ5lnqX9ea-rQxSFEw-MhQ_bCtJkFDNEtk9AgcTMzdmBBsTd67uvhYrTJ-hzCQjPBF28lo7rYRaCfC0EP8hVDemTnP_nYdP-iNEFHSMx8ybKB7XvZsaRrTlbmzKvqa5cPFVKMfpmtv-XGwcNUjr4AXurzLH8qVFgHyCu4U99OcYc5s8jQ_Qi9poY4G_8gylRG1-f0dNOCz_L43KfK4Y1i4yzE5gEPkr8ex5S73HDFwu1S-6X1gIPIMglgCaj9EUL6IKFIUpkuqlETMMxwCUndkZkQ4NbhgAXs0eJfefu9-rQrj9wnXGbXD6sICKM-ESL8ngxJskoe9lrh-17kk7CI1ZQ4za8n9MGlMZmEFQIl1eh_1U614G6wdWL5w20w2YKbsliVyjA2kdjDPcbdUJDXHSqbkrLAYrcnFsvpSZwoFcKHtOcOJvKoeuhWuOjZfwMFumCqi3rPAqNhWTm5eNcY5YUpYCKCxoORIdBLnhMtUSwLgjG62gPtPIwKRxAP2oruzg0qEbHLpL9fAH0qYjfMbTXlraK7JIcRSL4BDEeSvSkbZzsyVHwAyAx6prKHxbIu95DVYj09OkMENRccScCaHWga0TyS_P6KHE89UeRmZGaK-Ew8YLe64EOQfdkxpPiS66ApBtAaRdEyVJ-1_lU99B-5rY_oS_ggbSnic1Mw2dwaRLrKEvO7C6ZIBt12KP685BV_aqRdR6nMh_0jqmx0f2Qw4UZT_RE_ZqDsB8g2MSqurbrIPF_MGR7dGl_yojsiWZ9JQBO6hm2Ex-RHprWTdEfjP2b3ezpE5U6qRM2YHY1F53mLpZAgKfg3rhtR9MnZGkkfARu2gW7UUoxQVEnJ1CRWGV-WaIvVoQSePgEVtzuj06cP-lmf4qTtYBHiHL7MNw2lauCZJfcsUI4QMGUgHGuUfnadYorjeTRbmyjsG9Yj_QlllqSB1IuO5lyb6srR8pJjFBHUEvNg20IY2JRztffKYlncOOFZRkT90OcFhxyvesv1CosXym_Mhe88133n-UC53yMEfRVfQlk0-LjrAivfQI51SxSQELezJvt_NWUWuJj3Fdu5YXm6MVNbT0OFxWn2SY0ySVlyyFJVV0FlQ8xpO2fnbuEj5FeqcYEyRI2In_MPu-ajsIVPYv-EZOJaQ6s19oL8E5oeH3RV0TadGc7fdXg6p4VA6nPsUTxGoUrDEo8xneiEP3xQbSDYJC0JFvjWFMOR4rVoqY5KMWM-9FEkYtFK_kGJE6JwMFh_60ZAbk-Iv2vJCFAkrJPjGide5O-EOm5hueBodEtFE8oG4ZMWMgHnEk5CrWtHBqKwV5syX5umnsdpiKayAyZI4RGJ4KkmhxXstt2jLf5cSLq97FMmJLbhAQWYAK6f3-u6q1hvyrBN4-YCyU8cqqzei6fNwl4V0bfTaBw_7Rwe5dM4qB-m_ZsagYRlURk3m3Y8sN1E5sXj2KyM0qq6CsM3jZ-6U33IBd1Om9xdlsM4UqBWxeYrDI_bkTR0h8LoyiU4CWJaE5q5wwTIq8L12DwrxFsDYjvIOEDN9oGtGdNGYjkyc4HFUmEQJWA5GDqC-WUJiSM78XIkpY7OpJYMl620AyCuIsxBDig.fMnnmsfXZWsZMVsm5T5GNQ"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 31 Jul 2022 09:13:51 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "13"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 753821\n}"
+				}
+			]
+		},
+		{
+			"name": "create customer profile",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"var jsonData = JSON.parse(responseBody);\r",
+							"postman.setEnvironmentVariable(\"id1\", jsonData.id1);\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{AdminA2}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Api Task005\",\r\n    \"roles\": [\r\n        2,\r\n        3,\r\n        4,\r\n        5,\r\n        6,\r\n        22,\r\n        23,\r\n        8,\r\n        9,\r\n        15,\r\n        16,\r\n        17,\r\n        19,\r\n        20\r\n    ],\r\n    \"description\": \"testing in progress\",\r\n    \"useSameAttributeForIbft\": true,\r\n    \"useSameAttributeForIps\": true,\r\n    \"customerCharge\": {\r\n        \"registrationCharge\": 0,\r\n        \"renewCharge\": 0,\r\n        \"passwordChangeCharge\": 0,\r\n        \"renewInterval\": 12,\r\n        \"hasFreeAccessPeriod\": true,\r\n        \"freeAccessPeriod\": 1\r\n    },\r\n    \"profileAttributes\": [\r\n        {\r\n            \"id\": 1,\r\n            \"name\": \"MAXIMUM_AMOUNT_PER_TRANSACTION\",\r\n            \"description\": \"Maximum Amount Per Transaction\",\r\n            \"value\": \"10000.00\"\r\n        },\r\n        {\r\n            \"id\": 2,\r\n            \"name\": \"MAXIMUM_AMOUNT_PER_DAY\",\r\n            \"description\": \"Maximum Amount Per Day\",\r\n            \"value\": \"100000.00\"\r\n        },\r\n        {\r\n            \"id\": 3,\r\n            \"name\": \"MAXIMUM_AMOUNT_PER_MONTH\",\r\n            \"description\": \"Maximum Amount Per Month\",\r\n            \"value\": \"3000000.00\"\r\n        },\r\n        {\r\n            \"id\": 4,\r\n            \"name\": \"MINIMUM_AMOUNT_PER_TRANSACTION\",\r\n            \"description\": \"Minimum Amount Per Transaction\",\r\n            \"value\": \"10.00\"\r\n        },\r\n        {\r\n            \"id\": 5,\r\n            \"name\": \"MAXMIMUM_TRANSACTION_PER_DAY\",\r\n            \"description\": \"Maximum Transaction Per Day\",\r\n            \"value\": \"10\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/CustomerProfile/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"CustomerProfile",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "create customer profile",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{AdminA2}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Api Task002\",\r\n    \"roles\": [\r\n        2,\r\n        3,\r\n        4,\r\n        5,\r\n        6,\r\n        22,\r\n        23,\r\n        8,\r\n        9,\r\n        15,\r\n        16,\r\n        17,\r\n        19,\r\n        20\r\n    ],\r\n    \"description\": \"testing in progress\",\r\n    \"useSameAttributeForIbft\": true,\r\n    \"useSameAttributeForIps\": true,\r\n    \"customerCharge\": {\r\n        \"registrationCharge\": 0,\r\n        \"renewCharge\": 0,\r\n        \"passwordChangeCharge\": 0,\r\n        \"renewInterval\": 12,\r\n        \"hasFreeAccessPeriod\": true,\r\n        \"freeAccessPeriod\": 1\r\n    },\r\n    \"profileAttributes\": [\r\n        {\r\n            \"id\": 1,\r\n            \"name\": \"MAXIMUM_AMOUNT_PER_TRANSACTION\",\r\n            \"description\": \"Maximum Amount Per Transaction\",\r\n            \"value\": \"10000.00\"\r\n        },\r\n        {\r\n            \"id\": 2,\r\n            \"name\": \"MAXIMUM_AMOUNT_PER_DAY\",\r\n            \"description\": \"Maximum Amount Per Day\",\r\n            \"value\": \"100000.00\"\r\n        },\r\n        {\r\n            \"id\": 3,\r\n            \"name\": \"MAXIMUM_AMOUNT_PER_MONTH\",\r\n            \"description\": \"Maximum Amount Per Month\",\r\n            \"value\": \"3000000.00\"\r\n        },\r\n        {\r\n            \"id\": 4,\r\n            \"name\": \"MINIMUM_AMOUNT_PER_TRANSACTION\",\r\n            \"description\": \"Minimum Amount Per Transaction\",\r\n            \"value\": \"10.00\"\r\n        },\r\n        {\r\n            \"id\": 5,\r\n            \"name\": \"MAXMIMUM_TRANSACTION_PER_DAY\",\r\n            \"description\": \"Maximum Transaction Per Day\",\r\n            \"value\": \"10\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/CustomerProfile/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"CustomerProfile",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "GlassFish Server Open Source Edition  4.1"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Servlet/3.1 JSP/2.3 (GlassFish Server Open Source Edition  4.1  Java/Oracle Corporation/1.8)"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Expose-Headers",
+							"value": "Authorization"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 01 Aug 2022 05:55:49 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "87"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Customer Profile Created Successfully\",\n    \"status\": \"Created\",\n    \"statusCode\": 201\n}"
+				}
+			]
+		},
+		{
+			"name": "Get profile Id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var value =JSON.parse(responseBody)\r",
+							"console.log(value.result[0].id)\r",
+							"\r",
+							"var id =value.result[0].id\r",
+							"pm.collectionVariables.set(\"id1\",id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{AdminA2}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/CustomerProfile/search?name=Api%20Task004&page=1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"CustomerProfile",
+						"search"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Api%20Task004"
+						},
+						{
+							"key": "statusName",
+							"value": "Create Pending",
+							"disabled": true
+						},
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{AdminA2}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://10.13.194.6:8080/expressBanking-admin-web/api/CustomerProfile/search?name=Api%20Task003&page=1",
+							"protocol": "http",
+							"host": [
+								"10",
+								"13",
+								"194",
+								"6"
+							],
+							"port": "8080",
+							"path": [
+								"expressBanking-admin-web",
+								"api",
+								"CustomerProfile",
+								"search"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Api%20Task003"
+								},
+								{
+									"key": "statusName",
+									"value": "Create Pending",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "GlassFish Server Open Source Edition  4.1"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Servlet/3.1 JSP/2.3 (GlassFish Server Open Source Edition  4.1  Java/Oracle Corporation/1.8)"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Expose-Headers",
+							"value": "Authorization"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 01 Aug 2022 07:23:42 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "211"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"total\": 1,\n    \"size\": 1,\n    \"pageNumber\": 1,\n    \"result\": [\n        {\n            \"name\": \"Api Task003\",\n            \"description\": \"testing in progress\",\n            \"id\": 80,\n            \"status\": {\n                \"id\": 2,\n                \"name\": \"CREATE_PENDING\",\n                \"description\": \"CREATE PENDING\",\n                \"icon\": \"mdi-clock-alert\"\n            }\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Approve customer profile",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": [
+				{
+					"name": "Approve customer",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{AdminB2}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    82\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/CustomerProfile/Pending/CreateApprove/approve",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"CustomerProfile",
+								"Pending",
+								"CreateApprove",
+								"approve"
+							]
+						}
+					},
+					"status": "Accepted",
+					"code": 202,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "GlassFish Server Open Source Edition  4.1"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Servlet/3.1 JSP/2.3 (GlassFish Server Open Source Edition  4.1  Java/Oracle Corporation/1.8)"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Expose-Headers",
+							"value": "Authorization"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 01 Aug 2022 06:27:13 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "85"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Customer Profile has been Approved\",\n    \"status\": \"Modified\",\n    \"statusCode\": 202\n}"
+				}
+			]
+		},
+		{
+			"name": "create corporate",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{Authorization2}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"JAWALAKHEL PETROL PUMP\",\r\n    \"nonResident\": false,\r\n    \"userName\": \"jwala\",\r\n    \"passwordSetup\": {\r\n        \"passwordDelivery\": \"SMS_AND_EMAIL\"\r\n    },\r\n    \"address\": \"kathmandu123\",\r\n    \"email\": \"aveeshek7@gmail.com\",\r\n    \"branch\": 1,\r\n    \"corporateProfile\": 107,\r\n    \"customerCode\": \"00027742\",\r\n    \"iPLogin\": {\r\n        \"iPLoginActive\": false,\r\n        \"ipAddress\": \"\"\r\n    },\r\n    \"accounts\": [\r\n        {\r\n            \"accountNumber\": \"00100200027742000001\",\r\n            \"isPrimaryAccount\": true\r\n        }\r\n    ],\r\n    \"twoFactorAuthenticationType\": null,\r\n    \"mobile\": 9843441744\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/CorporateClient/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"CorporateClient",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "create corporate",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization2}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"JAWALAKHEL PETROL PUMP\",\r\n    \"nonResident\": false,\r\n    \"userName\": \"jwala\",\r\n    \"passwordSetup\": {\r\n        \"passwordDelivery\": \"SMS_AND_EMAIL\"\r\n    },\r\n    \"address\": \"kathmandu123\",\r\n    \"email\": \"aveeshek7@gmail.com\",\r\n    \"branch\": 1,\r\n    \"corporateProfile\": 107,\r\n    \"customerCode\": \"00027742\",\r\n    \"iPLogin\": {\r\n        \"iPLoginActive\": false,\r\n        \"ipAddress\": \"\"\r\n    },\r\n    \"accounts\": [\r\n        {\r\n            \"accountNumber\": \"00100200027742000001\",\r\n            \"isPrimaryAccount\": true\r\n        }\r\n    ],\r\n    \"twoFactorAuthenticationType\": null,\r\n    \"mobile\": 9843441744\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/CorporateClient/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"CorporateClient",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "GlassFish Server Open Source Edition  4.1"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Servlet/3.1 JSP/2.3 (GlassFish Server Open Source Edition  4.1  Java/Oracle Corporation/1.8)"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Expose-Headers",
+							"value": "Authorization"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 31 Jul 2022 09:12:55 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "99"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Corporate Client Successfully created\",\n    \"status\": \"Created\",\n    \"id\": 753869,\n    \"statusCode\": 201\n}"
+				}
+			]
+		},
+		{
+			"name": "Approve corporate client",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 202\", function () {\r",
+							"    pm.response.to.have.status(202);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{Authorization4}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    753879\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/CorporateClient/Pending/CreateApproveReCreatable/approve",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"CorporateClient",
+						"Pending",
+						"CreateApproveReCreatable",
+						"approve"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Approve corporate client",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization4}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    753868\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/CorporateClient/Pending/CreateApproveReCreatable/approve",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"CorporateClient",
+								"Pending",
+								"CreateApproveReCreatable",
+								"approve"
+							]
+						}
+					},
+					"status": "Accepted",
+					"code": 202,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "GlassFish Server Open Source Edition  4.1"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Servlet/3.1 JSP/2.3 (GlassFish Server Open Source Edition  4.1  Java/Oracle Corporation/1.8)"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Expose-Headers",
+							"value": "Authorization"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 31 Jul 2022 08:55:56 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "85"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Corporate Client has been Approved\",\n    \"status\": \"Modified\",\n    \"statusCode\": 202\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://10.13.194.6:8080/expressBanking-admin-web",
+			"type": "string"
+		},
+		{
+			"key": "username",
+			"value": "admin",
+			"type": "string"
+		},
+		{
+			"key": "superpassword1",
+			"value": "admin2",
+			"type": "string"
+		},
+		{
+			"key": "superpassword2",
+			"value": "admin3",
+			"type": "string"
+		},
+		{
+			"key": "Authorization",
+			"value": "eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2IiwiY3R5IjoiSldUIn0..avUKvHFZS4xEg0GSRYCluQ.meYv9wl7Hf7BaVga83_Wot3c6tUzjdnvqByo4FOIBmFu37dUcK1GgMWzwhnBhUvghBydBkegvrJBOCTbadmdmiCuObt1JIOZksL1DbUNNA4oEZ4hfdNNIxH_Q77vqS-MsMtnKYYTJU2r3IlVNPFRRsgwaAYXojFZDgnA5MUbKQ9GPP0RKAS4srf8FicyyI7Buj5UTFnKlK--EUBHRFOr_93idOwzqfdPkfZT_MKo6gbkLYW_RnOpTCC0t7zbMk7tUWxq8xkj_vV2Rlsa_JkW6JZPAFjYhR27X25c3OW9wBzMxS-mO0y26YzpoJzjDSUA9tha9Aab5s6qCBLLRHFdJSndB_Hd9WQAKTy5ZRicsAwUekg3g1s5YkB4v2Nkj0NpOGz_g5FhAy0mbIB5V_72YfngMLu44EgygkDIpP7Gx1ZI5QonSecti2DxFjErdUYNcCYaKLRpe2uMsaTdNUfbkfzF_YeVgVwC2q2OTydhJlCZo0tDBqXNIx3rcCUoV4jtA3bWJEQx0pOSKchySymEeXc6xB9Oep9Vsvua4qUBUbU0rdqWw2PetGKKV6opO15naNfO_lN1gIOn6vtXfxvFK850qPqn-pGGFQq22q8izZ_B5NRlqF42S8Lh0SJ-zj9OWl4xPmlMCAR3U3J6cSKK9Z899pyZiYEVFpEMbXB24e6707S0inRixv2fbMaE94l8CGTNqwWn-m5UljI6WrjNP02Gcno_JZ50E14Z7wNr6RmlaYmDfutkc_HK715NLmJyIUMrM5iehyfjG7fpaKgr2wJBrHaTZIM9-9Cj65l6z_i4VEh3_SnePnuF7hwOz-PQHbiws8GkoEM_eGkhrQZlaSqkMgfHJGMNZY2udf8UfPKd7mjfLg94nKgVHj2vtJSPVErqnoAEYUtcoGvDAV1CMyIInMPcAIOtzPWNOXAia866pAcUgEaiZuSfQ-UnG3H98hxpXkqzwDajo1BE4IxYDcxd-Rz3tFemHwgn8ujGwF23IL6kfrGvx-Vn43MTmtcnfLP6J6Xakot1tH-ogCa5dksQzJzmW15UHiqELoGiRRy7ns-FtE_pKsfU9cPEk69QL8tfUJ_m5qLEbpT3h-SEuegqiLm3VWRxbb-U9CJpZmXLiOvwh6SgrZlEWHvLYX9ompDNI3jdUHubVOCf-59VvcH7CemRY4Yy5IgLco7U0TF7OjoMm7BCm-psXNAu2iHy3fH3u1Ux2fVTEny7__xPyLvvERFuHGjj66VO79g8qlGGWJ15AeiQ9S6h2mZOTFev9vsn79eGkEJ0Cc1ik_00kfTBqs8Hc8ugBr92AYEBNZSK-tJR_WuAa1qTi-f1JhggWGE8-kNZvCDButJklDaRMDiUqce5o84eyyse-hP_BRkoNv87jPP6QQQ9rXJL3d7k__ObcOiwYlP1TRWBzdk_lChBTBL4RAOVeMnroH89QcS9LaOZZCKA_HEAJLwJTNZYkDeS85A_Kw98FKPKCWRY15up5o8lEgnNerFfcrn2V9n595KvxHUqMdwSmyNEmNCVlOyCpcMSuviEvHpXt_dBDlpzU27Mkb1PZbdRsWGGeGTg3ZmwXXFeYx7COqRxp1ToLJQEP4onnlzbfTfbA4_oOXvrU8a2eGzF02ZZPKW3JAgABtpor9p_R7ghLbtzMfNJqEG2XRHBVf-UfIvpb9piMzO1siQYT3FtonqOFKSytW8fbAKtKwKlowFrBs9m1PsMFwTLAxskdXPXqR2uGDZtGgwG57fqN7Vq4y0WR_AAG8CJPFWCAK6SFtBBz2cuRGC-SzajWRPmQRD1EdQTDvUxCOyXkM3K4BVLkNIzm9N3ZV-qYiWCgYoH7m1fpBBKflWFUrTE7-cemFIRhO4th3tqBkliBbvhk1UwPgH7gmpsBPEGwcQp48jHLaPi6gIO3nlhZRE2QGIQZLJiOnyPOPPAPiTZDomyQVcoHbOtOX2TSjTrWyk7dGledp2IoISpNYEcBZ-5H0QUniwJLqZIj2rwcF3pTRd9s7g_wEBUeAXtumugwocTmkLv8asjjlG4X3INO-x0sJFCZzfMP30MLUnAzfOHXdjU4mJy6KOQL5cvsizYXmrRn37DJTLDSzG3pTayUgvS3_arCcOXEIdH3g4Kd60O-NslN4ezcQjylfp7tinQAex8MJgxXyAWhTH5XUq2S0xdIFF98XZ1foAYIJKJpd4ji9VvtbYvQNCdDZGE8pGgBSGEm7-JGpqJX4sKO_ar3LOqkEvnbxFi9OeiD6q9kxtPsEyZIiLXaX66E_EI45xujCfXWINQmgveKqQnDwZ3I9hD-MIwWCJk1oJeCCBIrK4BfG2AtAPwI9ruNHu4aA9W85jM_WXbOM1YzA9-j1E95weNE58tE80PbbpzXO4Hw9t8oZVpO9GTss8vW7lPXCJE78MpArmjLvc2moN01LdFaVXU5mM5n-fc5-gx7pU-OmY0_fbetrw5wTuixQr7k261aKQ504RTKZJz-RfkQ9ypczFmQSS1YS0scbeI3xUIcM5t14_iKIUeaZmLM1n2t7xOZM9Eoi35iMCjX1RXYFTnI1db42nWBuwfnWUyiOEcqLnBBCxXQ6FTCBhbEF9Z4Ui4DbYiUqZKXMSqyOQnvIjqIi2NNayf1ZYHqRzAZtRSXDOMJjiC8H1G8ZNzJ3lHG4OB8RLtMNxA3Lb3smr5C1YRcJb_dTg-eBF3T7ezVD6iCOVn-6Qvj3tiZOhAAQAGJYCZZIfT0nr-VZGQQn3vEakCpNDSXkCJtmZp_dlSVafa-tDjJjw-6eB81cBGw7KQb8XADrFF3iOszww8f_sdtXloFItgbb2HeEFTHAvXvNvFTE02uMv39dtblPq51w3zrlrKd70QIaUEvaD487U5bgAQmfmV3yUbhV0ON3B_Wc63kZk0ELGXgMYzMAygdHh4LlAlOD5YazcZoRdf_n87Yn8almI78-I4JJpYko6ZeYqzLY3OAQiRKgXM1kzNEQiT_lEFoAB7Ffxg-Ph_ptP8i1JwyMy21xMZTLWf1BgxBmiCp4T2DQczS-eMpoKY0raizQ0Wr9lX_zghw9FdDdIblQDTZ1vNZaSf4MM2s-KbAUlCW2Ro08vo_ox28eAJ20o2Y0Lm1z2Fj-YUc_A_dROWFmm8XDak9wMlVp_o-5uz2DMMs3qPnfnDSXuAUhnYnCOPrfq80bS3K8lEn742GlAknhAjzzMqasa059GtObQS1vuIvaH_71OdjXDz_0Sl4GvJHxlGn-fn2I1PHuywUQ-RYI1GcXpY5Tu_hTIAOM24ddlczJAO46s3ya9FxOqQagRf0EqYTQX-SvwRAAK9EmYHSFS5mg8N0cAaUHiuKvH-Ji0gR0nD-kJQ9tINzLHFPyD8i50SXEAv7ffJODFIHw6BtWxvpfY1J4Nq0dWFlAFtZYG0HFo62D7MR3Z3J_6jnRqEWcRQggWuVNvToBVC9qHn479g.n6xDYCyBxzqa--22pl0EQweyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2IiwiY3R5IjoiSldUIn0..avUKvHFZS4xEg0GSRYCluQ.meYv9wl7Hf7BaVga83_Wot3c6tUzjdnvqByo4FOIBmFu37dUcK1GgMWzwhnBhUvghBydBkegvrJBOCTbadmdmiCuObt1JIOZksL1DbUNNA4oEZ4hfdNNIxH_Q77vqS-MsMtnKYYTJU2r3IlVNPFRRsgwaAYXojFZDgnA5MUbKQ9GPP0RKAS4srf8FicyyI7Buj5UTFnKlK--EUBHRFOr_93idOwzqfdPkfZT_MKo6gbkLYW_RnOpTCC0t7zbMk7tUWxq8xkj_vV2Rlsa_JkW6JZPAFjYhR27X25c3OW9wBzMxS-mO0y26YzpoJzjDSUA9tha9Aab5s6qCBLLRHFdJSndB_Hd9WQAKTy5ZRicsAwUekg3g1s5YkB4v2Nkj0NpOGz_g5FhAy0mbIB5V_72YfngMLu44EgygkDIpP7Gx1ZI5QonSecti2DxFjErdUYNcCYaKLRpe2uMsaTdNUfbkfzF_YeVgVwC2q2OTydhJlCZo0tDBqXNIx3rcCUoV4jtA3bWJEQx0pOSKchySymEeXc6xB9Oep9Vsvua4qUBUbU0rdqWw2PetGKKV6opO15naNfO_lN1gIOn6vtXfxvFK850qPqn-pGGFQq22q8izZ_B5NRlqF42S8Lh0SJ-zj9OWl4xPmlMCAR3U3J6cSKK9Z899pyZiYEVFpEMbXB24e6707S0inRixv2fbMaE94l8CGTNqwWn-m5UljI6WrjNP02Gcno_JZ50E14Z7wNr6RmlaYmDfutkc_HK715NLmJyIUMrM5iehyfjG7fpaKgr2wJBrHaTZIM9-9Cj65l6z_i4VEh3_SnePnuF7hwOz-PQHbiws8GkoEM_eGkhrQZlaSqkMgfHJGMNZY2udf8UfPKd7mjfLg94nKgVHj2vtJSPVErqnoAEYUtcoGvDAV1CMyIInMPcAIOtzPWNOXAia866pAcUgEaiZuSfQ-UnG3H98hxpXkqzwDajo1BE4IxYDcxd-Rz3tFemHwgn8ujGwF23IL6kfrGvx-Vn43MTmtcnfLP6J6Xakot1tH-ogCa5dksQzJzmW15UHiqELoGiRRy7ns-FtE_pKsfU9cPEk69QL8tfUJ_m5qLEbpT3h-SEuegqiLm3VWRxbb-U9CJpZmXLiOvwh6SgrZlEWHvLYX9ompDNI3jdUHubVOCf-59VvcH7CemRY4Yy5IgLco7U0TF7OjoMm7BCm-psXNAu2iHy3fH3u1Ux2fVTEny7__xPyLvvERFuHGjj66VO79g8qlGGWJ15AeiQ9S6h2mZOTFev9vsn79eGkEJ0Cc1ik_00kfTBqs8Hc8ugBr92AYEBNZSK-tJR_WuAa1qTi-f1JhggWGE8-kNZvCDButJklDaRMDiUqce5o84eyyse-hP_BRkoNv87jPP6QQQ9rXJL3d7k__ObcOiwYlP1TRWBzdk_lChBTBL4RAOVeMnroH89QcS9LaOZZCKA_HEAJLwJTNZYkDeS85A_Kw98FKPKCWRY15up5o8lEgnNerFfcrn2V9n595KvxHUqMdwSmyNEmNCVlOyCpcMSuviEvHpXt_dBDlpzU27Mkb1PZbdRsWGGeGTg3ZmwXXFeYx7COqRxp1ToLJQEP4onnlzbfTfbA4_oOXvrU8a2eGzF02ZZPKW3JAgABtpor9p_R7ghLbtzMfNJqEG2XRHBVf-UfIvpb9piMzO1siQYT3FtonqOFKSytW8fbAKtKwKlowFrBs9m1PsMFwTLAxskdXPXqR2uGDZtGgwG57fqN7Vq4y0WR_AAG8CJPFWCAK6SFtBBz2cuRGC-SzajWRPmQRD1EdQTDvUxCOyXkM3K4BVLkNIzm9N3ZV-qYiWCgYoH7m1fpBBKflWFUrTE7-cemFIRhO4th3tqBkliBbvhk1UwPgH7gmpsBPEGwcQp48jHLaPi6gIO3nlhZRE2QGIQZLJiOnyPOPPAPiTZDomyQVcoHbOtOX2TSjTrWyk7dGledp2IoISpNYEcBZ-5H0QUniwJLqZIj2rwcF3pTRd9s7g_wEBUeAXtumugwocTmkLv8asjjlG4X3INO-x0sJFCZzfMP30MLUnAzfOHXdjU4mJy6KOQL5cvsizYXmrRn37DJTLDSzG3pTayUgvS3_arCcOXEIdH3g4Kd60O-NslN4ezcQjylfp7tinQAex8MJgxXyAWhTH5XUq2S0xdIFF98XZ1foAYIJKJpd4ji9VvtbYvQNCdDZGE8pGgBSGEm7-JGpqJX4sKO_ar3LOqkEvnbxFi9OeiD6q9kxtPsEyZIiLXaX66E_EI45xujCfXWINQmgveKqQnDwZ3I9hD-MIwWCJk1oJeCCBIrK4BfG2AtAPwI9ruNHu4aA9W85jM_WXbOM1YzA9-j1E95weNE58tE80PbbpzXO4Hw9t8oZVpO9GTss8vW7lPXCJE78MpArmjLvc2moN01LdFaVXU5mM5n-fc5-gx7pU-OmY0_fbetrw5wTuixQr7k261aKQ504RTKZJz-RfkQ9ypczFmQSS1YS0scbeI3xUIcM5t14_iKIUeaZmLM1n2t7xOZM9Eoi35iMCjX1RXYFTnI1db42nWBuwfnWUyiOEcqLnBBCxXQ6FTCBhbEF9Z4Ui4DbYiUqZKXMSqyOQnvIjqIi2NNayf1ZYHqRzAZtRSXDOMJjiC8H1G8ZNzJ3lHG4OB8RLtMNxA3Lb3smr5C1YRcJb_dTg-eBF3T7ezVD6iCOVn-6Qvj3tiZOhAAQAGJYCZZIfT0nr-VZGQQn3vEakCpNDSXkCJtmZp_dlSVafa-tDjJjw-6eB81cBGw7KQb8XADrFF3iOszww8f_sdtXloFItgbb2HeEFTHAvXvNvFTE02uMv39dtblPq51w3zrlrKd70QIaUEvaD487U5bgAQmfmV3yUbhV0ON3B_Wc63kZk0ELGXgMYzMAygdHh4LlAlOD5YazcZoRdf_n87Yn8almI78-I4JJpYko6ZeYqzLY3OAQiRKgXM1kzNEQiT_lEFoAB7Ffxg-Ph_ptP8i1JwyMy21xMZTLWf1BgxBmiCp4T2DQczS-eMpoKY0raizQ0Wr9lX_zghw9FdDdIblQDTZ1vNZaSf4MM2s-KbAUlCW2Ro08vo_ox28eAJ20o2Y0Lm1z2Fj-YUc_A_dROWFmm8XDak9wMlVp_o-5uz2DMMs3qPnfnDSXuAUhnYnCOPrfq80bS3K8lEn742GlAknhAjzzMqasa059GtObQS1vuIvaH_71OdjXDz_0Sl4GvJHxlGn-fn2I1PHuywUQ-RYI1GcXpY5Tu_hTIAOM24ddlczJAO46s3ya9FxOqQagRf0EqYTQX-SvwRAAK9EmYHSFS5mg8N0cAaUHiuKvH-Ji0gR0nD-kJQ9tINzLHFPyD8i50SXEAv7ffJODFIHw6BtWxvpfY1J4Nq0dWFlAFtZYG0HFo62D7MR3Z3J_6jnRqEWcRQggWuVNvToBVC9qHn479g.n6xDYCyBxzqa--22pl0EQweyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2IiwiY3R5IjoiSldUIn0..avUKvHFZS4xEg0GSRYCluQ.meYv9wl7Hf7BaVga83_Wot3c6tUzjdnvqByo4FOIBmFu37dUcK1GgMWzwhnBhUvghBydBkegvrJBOCTbadmdmiCuObt1JIOZksL1DbUNNA4oEZ4hfdNNIxH_Q77vqS-MsMtnKYYTJU2r3IlVNPFRRsgwaAYXojFZDgnA5MUbKQ9GPP0RKAS4srf8FicyyI7Buj5UTFnKlK--EUBHRFOr_93idOwzqfdPkfZT_MKo6gbkLYW_RnOpTCC0t7zbMk7tUWxq8xkj_vV2Rlsa_JkW6JZPAFjYhR27X25c3OW9wBzMxS-mO0y26YzpoJzjDSUA9tha9Aab5s6qCBLLRHFdJSndB_Hd9WQAKTy5ZRicsAwUekg3g1s5YkB4v2Nkj0NpOGz_g5FhAy0mbIB5V_72YfngMLu44EgygkDIpP7Gx1ZI5QonSecti2DxFjErdUYNcCYaKLRpe2uMsaTdNUfbkfzF_YeVgVwC2q2OTydhJlCZo0tDBqXNIx3rcCUoV4jtA3bWJEQx0pOSKchySymEeXc6xB9Oep9Vsvua4qUBUbU0rdqWw2PetGKKV6opO15naNfO_lN1gIOn6vtXfxvFK850qPqn-pGGFQq22q8izZ_B5NRlqF42S8Lh0SJ-zj9OWl4xPmlMCAR3U3J6cSKK9Z899pyZiYEVFpEMbXB24e6707S0inRixv2fbMaE94l8CGTNqwWn-m5UljI6WrjNP02Gcno_JZ50E14Z7wNr6RmlaYmDfutkc_HK715NLmJyIUMrM5iehyfjG7fpaKgr2wJBrHaTZIM9-9Cj65l6z_i4VEh3_SnePnuF7hwOz-PQHbiws8GkoEM_eGkhrQZlaSqkMgfHJGMNZY2udf8UfPKd7mjfLg94nKgVHj2vtJSPVErqnoAEYUtcoGvDAV1CMyIInMPcAIOtzPWNOXAia866pAcUgEaiZuSfQ-UnG3H98hxpXkqzwDajo1BE4IxYDcxd-Rz3tFemHwgn8ujGwF23IL6kfrGvx-Vn43MTmtcnfLP6J6Xakot1tH-ogCa5dksQzJzmW15UHiqELoGiRRy7ns-FtE_pKsfU9cPEk69QL8tfUJ_m5qLEbpT3h-SEuegqiLm3VWRxbb-U9CJpZmXLiOvwh6SgrZlEWHvLYX9ompDNI3jdUHubVOCf-59VvcH7CemRY4Yy5IgLco7U0TF7OjoMm7BCm-psXNAu2iHy3fH3u1Ux2fVTEny7__xPyLvvERFuHGjj66VO79g8qlGGWJ15AeiQ9S6h2mZOTFev9vsn79eGkEJ0Cc1ik_00kfTBqs8Hc8ugBr92AYEBNZSK-tJR_WuAa1qTi-f1JhggWGE8-kNZvCDButJklDaRMDiUqce5o84eyyse-hP_BRkoNv87jPP6QQQ9rXJL3d7k__ObcOiwYlP1TRWBzdk_lChBTBL4RAOVeMnroH89QcS9LaOZZCKA_HEAJLwJTNZYkDeS85A_Kw98FKPKCWRY15up5o8lEgnNerFfcrn2V9n595KvxHUqMdwSmyNEmNCVlOyCpcMSuviEvHpXt_dBDlpzU27Mkb1PZbdRsWGGeGTg3ZmwXXFeYx7COqRxp1ToLJQEP4onnlzbfTfbA4_oOXvrU8a2eGzF02ZZPKW3JAgABtpor9p_R7ghLbtzMfNJqEG2XRHBVf-UfIvpb9piMzO1siQYT3FtonqOFKSytW8fbAKtKwKlowFrBs9m1PsMFwTLAxskdXPXqR2uGDZtGgwG57fqN7Vq4y0WR_AAG8CJPFWCAK6SFtBBz2cuRGC-SzajWRPmQRD1EdQTDvUxCOyXkM3K4BVLkNIzm9N3ZV-qYiWCgYoH7m1fpBBKflWFUrTE7-cemFIRhO4th3tqBkliBbvhk1UwPgH7gmpsBPEGwcQp48jHLaPi6gIO3nlhZRE2QGIQZLJiOnyPOPPAPiTZDomyQVcoHbOtOX2TSjTrWyk7dGledp2IoISpNYEcBZ-5H0QUniwJLqZIj2rwcF3pTRd9s7g_wEBUeAXtumugwocTmkLv8asjjlG4X3INO-x0sJFCZzfMP30MLUnAzfOHXdjU4mJy6KOQL5cvsizYXmrRn37DJTLDSzG3pTayUgvS3_arCcOXEIdH3g4Kd60O-NslN4ezcQjylfp7tinQAex8MJgxXyAWhTH5XUq2S0xdIFF98XZ1foAYIJKJpd4ji9VvtbYvQNCdDZGE8pGgBSGEm7-JGpqJX4sKO_ar3LOqkEvnbxFi9OeiD6q9kxtPsEyZIiLXaX66E_EI45xujCfXWINQmgveKqQnDwZ3I9hD-MIwWCJk1oJeCCBIrK4BfG2AtAPwI9ruNHu4aA9W85jM_WXbOM1YzA9-j1E95weNE58tE80PbbpzXO4Hw9t8oZVpO9GTss8vW7lPXCJE78MpArmjLvc2moN01LdFaVXU5mM5n-fc5-gx7pU-OmY0_fbetrw5wTuixQr7k261aKQ504RTKZJz-RfkQ9ypczFmQSS1YS0scbeI3xUIcM5t14_iKIUeaZmLM1n2t7xOZM9Eoi35iMCjX1RXYFTnI1db42nWBuwfnWUyiOEcqLnBBCxXQ6FTCBhbEF9Z4Ui4DbYiUqZKXMSqyOQnvIjqIi2NNayf1ZYHqRzAZtRSXDOMJjiC8H1G8ZNzJ3lHG4OB8RLtMNxA3Lb3smr5C1YRcJb_dTg-eBF3T7ezVD6iCOVn-6Qvj3tiZOhAAQAGJYCZZIfT0nr-VZGQQn3vEakCpNDSXkCJtmZp_dlSVafa-tDjJjw-6eB81cBGw7KQb8XADrFF3iOszww8f_sdtXloFItgbb2HeEFTHAvXvNvFTE02uMv39dtblPq51w3zrlrKd70QIaUEvaD487U5bgAQmfmV3yUbhV0ON3B_Wc63kZk0ELGXgMYzMAygdHh4LlAlOD5YazcZoRdf_n87Yn8almI78-I4JJpYko6ZeYqzLY3OAQiRKgXM1kzNEQiT_lEFoAB7Ffxg-Ph_ptP8i1JwyMy21xMZTLWf1BgxBmiCp4T2DQczS-eMpoKY0raizQ0Wr9lX_zghw9FdDdIblQDTZ1vNZaSf4MM2s-KbAUlCW2Ro08vo_ox28eAJ20o2Y0Lm1z2Fj-YUc_A_dROWFmm8XDak9wMlVp_o-5uz2DMMs3qPnfnDSXuAUhnYnCOPrfq80bS3K8lEn742GlAknhAjzzMqasa059GtObQS1vuIvaH_71OdjXDz_0Sl4GvJHxlGn-fn2I1PHuywUQ-RYI1GcXpY5Tu_hTIAOM24ddlczJAO46s3ya9FxOqQagRf0EqYTQX-SvwRAAK9EmYHSFS5mg8N0cAaUHiuKvH-Ji0gR0nD-kJQ9tINzLHFPyD8i50SXEAv7ffJODFIHw6BtWxvpfY1J4Nq0dWFlAFtZYG0HFo62D7MR3Z3J_6jnRqEWcRQggWuVNvToBVC9qHn479g.n6xDYCyBxzqa--22pl0EQweyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2IiwiY3R5IjoiSldUIn0..avUKvHFZS4xEg0GSRYCluQ.meYv9wl7Hf7BaVga83_Wot3c6tUzjdnvqByo4FOIBmFu37dUcK1GgMWzwhnBhUvghBydBkegvrJBOCTbadmdmiCuObt1JIOZksL1DbUNNA4oEZ4hfdNNIxH_Q77vqS-MsMtnKYYTJU2r3IlVNPFRRsgwaAYXojFZDgnA5MUbKQ9GPP0RKAS4srf8FicyyI7Buj5UTFnKlK--EUBHRFOr_93idOwzqfdPkfZT_MKo6gbkLYW_RnOpTCC0t7zbMk7tUWxq8xkj_vV2Rlsa_JkW6JZPAFjYhR27X25c3OW9wBzMxS-mO0y26YzpoJzjDSUA9tha9Aab5s6qCBLLRHFdJSndB_Hd9WQAKTy5ZRicsAwUekg3g1s5YkB4v2Nkj0NpOGz_g5FhAy0mbIB5V_72YfngMLu44EgygkDIpP7Gx1ZI5QonSecti2DxFjErdUYNcCYaKLRpe2uMsaTdNUfbkfzF_YeVgVwC2q2OTydhJlCZo0tDBqXNIx3rcCUoV4jtA3bWJEQx0pOSKchySymEeXc6xB9Oep9Vsvua4qUBUbU0rdqWw2PetGKKV6opO15naNfO_lN1gIOn6vtXfxvFK850qPqn-pGGFQq22q8izZ_B5NRlqF42S8Lh0SJ-zj9OWl4xPmlMCAR3U3J6cSKK9Z899pyZiYEVFpEMbXB24e6707S0inRixv2fbMaE94l8CGTNqwWn-m5UljI6WrjNP02Gcno_JZ50E14Z7wNr6RmlaYmDfutkc_HK715NLmJyIUMrM5iehyfjG7fpaKgr2wJBrHaTZIM9-9Cj65l6z_i4VEh3_SnePnuF7hwOz-PQHbiws8GkoEM_eGkhrQZlaSqkMgfHJGMNZY2udf8UfPKd7mjfLg94nKgVHj2vtJSPVErqnoAEYUtcoGvDAV1CMyIInMPcAIOtzPWNOXAia866pAcUgEaiZuSfQ-UnG3H98hxpXkqzwDajo1BE4IxYDcxd-Rz3tFemHwgn8ujGwF23IL6kfrGvx-Vn43MTmtcnfLP6J6Xakot1tH-ogCa5dksQzJzmW15UHiqELoGiRRy7ns-FtE_pKsfU9cPEk69QL8tfUJ_m5qLEbpT3h-SEuegqiLm3VWRxbb-U9CJpZmXLiOvwh6SgrZlEWHvLYX9ompDNI3jdUHubVOCf-59VvcH7CemRY4Yy5IgLco7U0TF7OjoMm7BCm-psXNAu2iHy3fH3u1Ux2fVTEny7__xPyLvvERFuHGjj66VO79g8qlGGWJ15AeiQ9S6h2mZOTFev9vsn79eGkEJ0Cc1ik_00kfTBqs8Hc8ugBr92AYEBNZSK-tJR_WuAa1qTi-f1JhggWGE8-kNZvCDButJklDaRMDiUqce5o84eyyse-hP_BRkoNv87jPP6QQQ9rXJL3d7k__ObcOiwYlP1TRWBzdk_lChBTBL4RAOVeMnroH89QcS9LaOZZCKA_HEAJLwJTNZYkDeS85A_Kw98FKPKCWRY15up5o8lEgnNerFfcrn2V9n595KvxHUqMdwSmyNEmNCVlOyCpcMSuviEvHpXt_dBDlpzU27Mkb1PZbdRsWGGeGTg3ZmwXXFeYx7COqRxp1ToLJQEP4onnlzbfTfbA4_oOXvrU8a2eGzF02ZZPKW3JAgABtpor9p_R7ghLbtzMfNJqEG2XRHBVf-UfIvpb9piMzO1siQYT3FtonqOFKSytW8fbAKtKwKlowFrBs9m1PsMFwTLAxskdXPXqR2uGDZtGgwG57fqN7Vq4y0WR_AAG8CJPFWCAK6SFtBBz2cuRGC-SzajWRPmQRD1EdQTDvUxCOyXkM3K4BVLkNIzm9N3ZV-qYiWCgYoH7m1fpBBKflWFUrTE7-cemFIRhO4th3tqBkliBbvhk1UwPgH7gmpsBPEGwcQp48jHLaPi6gIO3nlhZRE2QGIQZLJiOnyPOPPAPiTZDomyQVcoHbOtOX2TSjTrWyk7dGledp2IoISpNYEcBZ-5H0QUniwJLqZIj2rwcF3pTRd9s7g_wEBUeAXtumugwocTmkLv8asjjlG4X3INO-x0sJFCZzfMP30MLUnAzfOHXdjU4mJy6KOQL5cvsizYXmrRn37DJTLDSzG3pTayUgvS3_arCcOXEIdH3g4Kd60O-NslN4ezcQjylfp7tinQAex8MJgxXyAWhTH5XUq2S0xdIFF98XZ1foAYIJKJpd4ji9VvtbYvQNCdDZGE8pGgBSGEm7-JGpqJX4sKO_ar3LOqkEvnbxFi9OeiD6q9kxtPsEyZIiLXaX66E_EI45xujCfXWINQmgveKqQnDwZ3I9hD-MIwWCJk1oJeCCBIrK4BfG2AtAPwI9ruNHu4aA9W85jM_WXbOM1YzA9-j1E95weNE58tE80PbbpzXO4Hw9t8oZVpO9GTss8vW7lPXCJE78MpArmjLvc2moN01LdFaVXU5mM5n-fc5-gx7pU-OmY0_fbetrw5wTuixQr7k261aKQ504RTKZJz-RfkQ9ypczFmQSS1YS0scbeI3xUIcM5t14_iKIUeaZmLM1n2t7xOZM9Eoi35iMCjX1RXYFTnI1db42nWBuwfnWUyiOEcqLnBBCxXQ6FTCBhbEF9Z4Ui4DbYiUqZKXMSqyOQnvIjqIi2NNayf1ZYHqRzAZtRSXDOMJjiC8H1G8ZNzJ3lHG4OB8RLtMNxA3Lb3smr5C1YRcJb_dTg-eBF3T7ezVD6iCOVn-6Qvj3tiZOhAAQAGJYCZZIfT0nr-VZGQQn3vEakCpNDSXkCJtmZp_dlSVafa-tDjJjw-6eB81cBGw7KQb8XADrFF3iOszww8f_sdtXloFItgbb2HeEFTHAvXvNvFTE02uMv39dtblPq51w3zrlrKd70QIaUEvaD487U5bgAQmfmV3yUbhV0ON3B_Wc63kZk0ELGXgMYzMAygdHh4LlAlOD5YazcZoRdf_n87Yn8almI78-I4JJpYko6ZeYqzLY3OAQiRKgXM1kzNEQiT_lEFoAB7Ffxg-Ph_ptP8i1JwyMy21xMZTLWf1BgxBmiCp4T2DQczS-eMpoKY0raizQ0Wr9lX_zghw9FdDdIblQDTZ1vNZaSf4MM2s-KbAUlCW2Ro08vo_ox28eAJ20o2Y0Lm1z2Fj-YUc_A_dROWFmm8XDak9wMlVp_o-5uz2DMMs3qPnfnDSXuAUhnYnCOPrfq80bS3K8lEn742GlAknhAjzzMqasa059GtObQS1vuIvaH_71OdjXDz_0Sl4GvJHxlGn-fn2I1PHuywUQ-RYI1GcXpY5Tu_hTIAOM24ddlczJAO46s3ya9FxOqQagRf0EqYTQX-SvwRAAK9EmYHSFS5mg8N0cAaUHiuKvH-Ji0gR0nD-kJQ9tINzLHFPyD8i50SXEAv7ffJODFIHw6BtWxvpfY1J4Nq0dWFlAFtZYG0HFo62D7MR3Z3J_6jnRqEWcRQggWuVNvToBVC9qHn479g.n6xDYCyBxzqa--22pl0EQweyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2IiwiY3R5IjoiSldUIn0..avUKvHFZS4xEg0GSRYCluQ.meYv9wl7Hf7BaVga83_Wot3c6tUzjdnvqByo4FOIBmFu37dUcK1GgMWzwhnBhUvghBydBkegvrJBOCTbadmdmiCuObt1JIOZksL1DbUNNA4oEZ4hfdNNIxH_Q77vqS-MsMtnKYYTJU2r3IlVNPFRRsgwaAYXojFZDgnA5MUbKQ9GPP0RKAS4srf8FicyyI7Buj5UTFnKlK--EUBHRFOr_93idOwzqfdPkfZT_MKo6gbkLYW_RnOpTCC0t7zbMk7tUWxq8xkj_vV2Rlsa_JkW6JZPAFjYhR27X25c3OW9wBzMxS-mO0y26YzpoJzjDSUA9tha9Aab5s6qCBLLRHFdJSndB_Hd9WQAKTy5ZRicsAwUekg3g1s5YkB4v2Nkj0NpOGz_g5FhAy0mbIB5V_72YfngMLu44EgygkDIpP7Gx1ZI5QonSecti2DxFjErdUYNcCYaKLRpe2uMsaTdNUfbkfzF_YeVgVwC2q2OTydhJlCZo0tDBqXNIx3rcCUoV4jtA3bWJEQx0pOSKchySymEeXc6xB9Oep9Vsvua4qUBUbU0rdqWw2PetGKKV6opO15naNfO_lN1gIOn6vtXfxvFK850qPqn-pGGFQq22q8izZ_B5NRlqF42S8Lh0SJ-zj9OWl4xPmlMCAR3U3J6cSKK9Z899pyZiYEVFpEMbXB24e6707S0inRixv2fbMaE94l8CGTNqwWn-m5UljI6WrjNP02Gcno_JZ50E14Z7wNr6RmlaYmDfutkc_HK715NLmJyIUMrM5iehyfjG7fpaKgr2wJBrHaTZIM9-9Cj65l6z_i4VEh3_SnePnuF7hwOz-PQHbiws8GkoEM_eGkhrQZlaSqkMgfHJGMNZY2udf8UfPKd7mjfLg94nKgVHj2vtJSPVErqnoAEYUtcoGvDAV1CMyIInMPcAIOtzPWNOXAia866pAcUgEaiZuSfQ-UnG3H98hxpXkqzwDajo1BE4IxYDcxd-Rz3tFemHwgn8ujGwF23IL6kfrGvx-Vn43MTmtcnfLP6J6Xakot1tH-ogCa5dksQzJzmW15UHiqELoGiRRy7ns-FtE_pKsfU9cPEk69QL8tfUJ_m5qLEbpT3h-SEuegqiLm3VWRxbb-U9CJpZmXLiOvwh6SgrZlEWHvLYX9ompDNI3jdUHubVOCf-59VvcH7CemRY4Yy5IgLco7U0TF7OjoMm7BCm-psXNAu2iHy3fH3u1Ux2fVTEny7__xPyLvvERFuHGjj66VO79g8qlGGWJ15AeiQ9S6h2mZOTFev9vsn79eGkEJ0Cc1ik_00kfTBqs8Hc8ugBr92AYEBNZSK-tJR_WuAa1qTi-f1JhggWGE8-kNZvCDButJklDaRMDiUqce5o84eyyse-hP_BRkoNv87jPP6QQQ9rXJL3d7k__ObcOiwYlP1TRWBzdk_lChBTBL4RAOVeMnroH89QcS9LaOZZCKA_HEAJLwJTNZYkDeS85A_Kw98FKPKCWRY15up5o8lEgnNerFfcrn2V9n595KvxHUqMdwSmyNEmNCVlOyCpcMSuviEvHpXt_dBDlpzU27Mkb1PZbdRsWGGeGTg3ZmwXXFeYx7COqRxp1ToLJQEP4onnlzbfTfbA4_oOXvrU8a2eGzF02ZZPKW3JAgABtpor9p_R7ghLbtzMfNJqEG2XRHBVf-UfIvpb9piMzO1siQYT3FtonqOFKSytW8fbAKtKwKlowFrBs9m1PsMFwTLAxskdXPXqR2uGDZtGgwG57fqN7Vq4y0WR_AAG8CJPFWCAK6SFtBBz2cuRGC-SzajWRPmQRD1EdQTDvUxCOyXkM3K4BVLkNIzm9N3ZV-qYiWCgYoH7m1fpBBKflWFUrTE7-cemFIRhO4th3tqBkliBbvhk1UwPgH7gmpsBPEGwcQp48jHLaPi6gIO3nlhZRE2QGIQZLJiOnyPOPPAPiTZDomyQVcoHbOtOX2TSjTrWyk7dGledp2IoISpNYEcBZ-5H0QUniwJLqZIj2rwcF3pTRd9s7g_wEBUeAXtumugwocTmkLv8asjjlG4X3INO-x0sJFCZzfMP30MLUnAzfOHXdjU4mJy6KOQL5cvsizYXmrRn37DJTLDSzG3pTayUgvS3_arCcOXEIdH3g4Kd60O-NslN4ezcQjylfp7tinQAex8MJgxXyAWhTH5XUq2S0xdIFF98XZ1foAYIJKJpd4ji9VvtbYvQNCdDZGE8pGgBSGEm7-JGpqJX4sKO_ar3LOqkEvnbxFi9OeiD6q9kxtPsEyZIiLXaX66E_EI45xujCfXWINQmgveKqQnDwZ3I9hD-MIwWCJk1oJeCCBIrK4BfG2AtAPwI9ruNHu4aA9W85jM_WXbOM1YzA9-j1E95weNE58tE80PbbpzXO4Hw9t8oZVpO9GTss8vW7lPXCJE78MpArmjLvc2moN01LdFaVXU5mM5n-fc5-gx7pU-OmY0_fbetrw5wTuixQr7k261aKQ504RTKZJz-RfkQ9ypczFmQSS1YS0scbeI3xUIcM5t14_iKIUeaZmLM1n2t7xOZM9Eoi35iMCjX1RXYFTnI1db42nWBuwfnWUyiOEcqLnBBCxXQ6FTCBhbEF9Z4Ui4DbYiUqZKXMSqyOQnvIjqIi2NNayf1ZYHqRzAZtRSXDOMJjiC8H1G8ZNzJ3lHG4OB8RLtMNxA3Lb3smr5C1YRcJb_dTg-eBF3T7ezVD6iCOVn-6Qvj3tiZOhAAQAGJYCZZIfT0nr-VZGQQn3vEakCpNDSXkCJtmZp_dlSVafa-tDjJjw-6eB81cBGw7KQb8XADrFF3iOszww8f_sdtXloFItgbb2HeEFTHAvXvNvFTE02uMv39dtblPq51w3zrlrKd70QIaUEvaD487U5bgAQmfmV3yUbhV0ON3B_Wc63kZk0ELGXgMYzMAygdHh4LlAlOD5YazcZoRdf_n87Yn8almI78-I4JJpYko6ZeYqzLY3OAQiRKgXM1kzNEQiT_lEFoAB7Ffxg-Ph_ptP8i1JwyMy21xMZTLWf1BgxBmiCp4T2DQczS-eMpoKY0raizQ0Wr9lX_zghw9FdDdIblQDTZ1vNZaSf4MM2s-KbAUlCW2Ro08vo_ox28eAJ20o2Y0Lm1z2Fj-YUc_A_dROWFmm8XDak9wMlVp_o-5uz2DMMs3qPnfnDSXuAUhnYnCOPrfq80bS3K8lEn742GlAknhAjzzMqasa059GtObQS1vuIvaH_71OdjXDz_0Sl4GvJHxlGn-fn2I1PHuywUQ-RYI1GcXpY5Tu_hTIAOM24ddlczJAO46s3ya9FxOqQagRf0EqYTQX-SvwRAAK9EmYHSFS5mg8N0cAaUHiuKvH-Ji0gR0nD-kJQ9tINzLHFPyD8i50SXEAv7ffJODFIHw6BtWxvpfY1J4Nq0dWFlAFtZYG0HFo62D7MR3Z3J_6jnRqEWcRQggWuVNvToBVC9qHn479g.n6xDYCyBxzqa--22pl0EQw"
+		},
+		{
+			"key": "usernameA",
+			"value": "adminA",
+			"type": "string"
+		},
+		{
+			"key": "usernameB",
+			"value": "adminB",
+			"type": "string"
+		},
+		{
+			"key": "password",
+			"value": "Avishek1",
+			"type": "string"
+		},
+		{
+			"key": "password2",
+			"value": "Avishek2",
+			"type": "string"
+		},
+		{
+			"key": "Authorization2",
+			"value": "eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2IiwiY3R5IjoiSldUIn0..o9KmCLSCz9bAkfikj4GUEQ.0CuUFNen4nyLhW0JOwA4tBR4Y41EZKGBy8QPJvJVmVkdRJbVcfGPRjpepA7EFIfFjxYLtDGeg6nX2Bh2MatNQja27Kr7CBcEBvITSl7AEUr-z7ZyucSaoyX39Z80fT625IDSohigC8nUWDpztqmU2RzZquTb_TmBqXWoj90twx4JzgnJy_GGdvjYJn4CEiZ8KQ_REt28ETn0eGnSV3HVt6u32wm2TxWRgtsombbveVEXL1jzqVYfEWBzr4ihS1AjDUhh0YCMl27wK_moa46VD_XRUuOoNzqPV9EXLOUIiHA78_77b5uifsBKIEsBiiJkr859waibrHZhxEl2zNuWmM9k-b7IRwVY_GQOWnGR90RxoLE9ZqiN6anEodKDgFWcOIUtW1w9Y8jeSgxFkei6ih_Sfyrb437MXeTO9V-MPVhnYuJcNnVWu4O0xmwCRu3KICEta6jazhQ4UQsx9FOmJIjxmIH9g1qa5yc1qYgP7huPqX3o-zU2sF_8D4K5dM3bjQMXTyCJkeUlMjffbF6440jmDXXm21FTYEjKwf4fcej5C8TD-1E3k5_R1HcMZuTIF7mnlUKJVeCcxnemrH4eu7jwbn5T-M_qyttk9Fhs_H6iXyjcJMW89-izc37wjC1cuX9-YGFx4l6Bo37FlCqWbwt3BaSScBNidbP1FmT_FU-SWNBE2AC2musT32zJg_UUPTuJPK4MBlshHZXCbHRf4rG0I_nrCZfDLsQIkI8FQ_NmV3ckA2t83Hu2zDM7p4Iv-OE5f31oVlmeGuKSV4g0BJsd1pBoDEVZbgssR3HGYaRyzBvyKz-1cdNSc6xo9XZ-ni9x0tll8IcvhaAGChRoRnE3GXY5QaFwD9u9gu5YWf-5049zHtppUb7uAqIh8rmp5BVTqR34tLg7FnoT8ihi5opg1KooDwZUQBbIOCFH-8rxH35G13d9wZ-LFTR7DtcpNdDY_KGU0sOQ3EA41vncdrHJgNvKEAyZVuF_VKScPRL00PABcBcUgSpVLJVTtbnNDTTX_OSH3oaA0iaa-M7WtT00ZXTbP2ve8-y0kqhivnRQ7RVHRZAipZxWKR_0EJNLYMg-LpFgD4gD9PH11tUVbr3zahVsPNYZWnyPy4FVjAohJrqRvn08hOGuWO8zS2ruZ17JD4sqI0jJWhLn9o9SH_h8Uu8CtKtEKUgrd8Yie2NB4-iVyZLb3r_e6_ussLn-HtAcpWgzM0I2Ybm1ukEBhA0waykVUQUHxHhhGBnbfPR4ZNuEOUlqbkE_QXaJOMsFmuyIcMEBqpK0qY5R4LYeKot0MI_Oa9VXw0msB_3QnF-T6hjzqP9k5ibN3SnWJYknZiMnyjdN_pCH-EYlPNF_K9dipe1xzLVnzE4r6uJfO0mBDJuEWHASMcI7P8aeR5lcAE8puPVoAX7vEeeZ-eQj5NKIpI6qnQqj94f9S0K8jmRp8HXqCEn6U-vhCLMT2sO69GMER-c4tndAJKqbOh2MK0RAlxmSUuVEdtYYvCHu6EM7Kot-PVjMdmaQ3fUHxjDetfyUODpkrxrrGfNlAuvcyY9Fj5lsLE7KrGTXBxlPqgBd8rNoGqkd0DtsJhkbDKuJGs7EZ20IAU_R0PxHRRI_mL_ODS2Ki36_AMEUuHwJkDk6OgxoAMhiJGv8tlzup9TtW2fZfYukQjG5FlEkL4M40Gnt5MFYJoCiGchQfuMvAtcCGKSDuWS7W31eC8n0M1MkyB9QC6j_kFyknEKTZ3EdJTEGPAL27NIF4ISb79wZkpRRqRNC_9YYM6HwuwAdjjnEP3yxUK0AyOy0iTDPQuJARBBqBQHprRGaU1HtPqeeGPEjPwA11Qby5s3gCnYRlNi_8OBuY7XfRHgIEW48Jk63hEcVvO1Na7ju31qQahItxJnDgMCuG4y6nHenEKVCAZIQ9qx9J4KHTTPI1OZnp5NLq4iuQ3-njz1OfpG_yZqlj0Uu1EmTNaq9v8R-9NAvfhS4u75Vm4nQJwpiwa8UkT0r6bOaajYKmMvWWFCcj95xFjGaGVe1hKyVlz6mOGb7cnehQf923_Lk9u_vRT6o8yJedJM6KOcNJNFkz69Qkspfrlh9tUhuCH76fs9zgrpiRutZyRNZbZhz_Xy1y28RTUY2UI-ADQ-Pjy-IJwL1lKosKiLb9TTKnIsQYG6O9layYGkiL_M18di3eYCDJ7Cb0edR0OFW-91F_ble-pZhjXQIabVPviGJY-Hb4tpAXbRJpg2hgGq7nMrd7CAE415Nt8afNjZwKILmuzFxazuLRM9tYFjls4lxDXUS9qQHIU4_aJwQUNhqAHyYEinhuPitg6hksg5rlsXwlYWcqaVCtLuhmgc8LbS9RlBKOJA8rkKtjJye3RQTAUZIFxk0iL1Xkc_xNBwRb2hX5C9Dk_6b5X6gQ9OAQL4ioXbOzGxJ2AG62GG_LGcirYChwX-l49XpqJ2XGHM4MTkUXC4oRRnVwuy_4-GKDS9ZoCAFwOGQREFnQD16tYkB86zYfC2PStPcH0loPhM0VhBSktVCOvciZt5YspMEfgRhFlclKRxBowS_n7Zd6W6cwGpRAIToSMP-zw29lxlRl_r1hCvfNajVd6_tEXqBV2yjpgPg-nzJpbulfJefv2rl4Gzw_jfihWJhdV5AbFO0Ipmpf82cnUMptLAwyjqRZ9kFnAE94XT2hI0UC67fmDJTKvK92v2kYQaRMd8TitlP5-vPNAMjJ3GI01vOyemFhZBnzxg0mClKRTdQV0b6q3j54gdrhv9bEk34ahrXXYHUwgEwSSBH-K5DGxA0tyc8syTgTBs254HhV-afBPdd4YYnAcZmnHI1hLIBBMPDVCoqs2yjgpm5QhInCEs1PxWbDn08lsFymc8sL6zynVjQwM8TAQiD8Sx1uGONHjADFm_OdfrEatd5xIpSFti8nzrw1A1EuSzp_YYdGTzVwA3X0IFg5uZR9AlwIB5lh8aAqn4ApDShA8yK6sEZlh2cLDYeSmmxxtSWCRrBhAW3PFLiZsrWaJ3X9nQz2HSGF99rGnxaOgIiDE17KpXC75jA6tq_ylESoeM4h74JZt61ix5vnQYfYnyv9_ZFhcYBLHYlY0vnRJB1OzbNicPbvJWRITP3LaIjhmPf4azDIBBvKRIVj6o2NtlvhXXG3A7u4igJ3iiqtsx-5jgAizrucxMMYfUWS9oZDuVIDCpIvjBXnkOpx1PYk7ZSlwDPtZuBO0dxm_MOH4W-kbnCJp_zIsKzTKlMMkxL3QmbiiUw_JnS0sJ8zmIeBFxDeEJH1fUgGElhojyasbZzNnIidNQenPfBJdtlwxobzAn2y62TIKsGZx6KkByaf_V6VG50o_v1f70-x_Ig09YNsOKiT_jYLSi1L06oidnp8JqsbrDccIYpkoFsAGacLiaT3y4jQZVcDl-4QQ.kKjuvyp_kYUPTpau_6kyKg",
+			"type": "string",
+			"disabled": true
+		},
+		{
+			"key": "Authorization3",
+			"value": "eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2IiwiY3R5IjoiSldUIn0..DWY6HW9qS85MDBZjOp6wkw.kbesxbJkyFzK6mZTGCGqoG4l4iJypt2fGaO8LCHo1CGajO8WbIyXdra_ApT6_DjC8vOHbwTii68ZvIi7SgNC_trPRLWM6fEKUhUNoNonVZMGKAS3HAY2tu3_wVYmY4JeO4Hq-nzBrP8cB11ZKF9yzohcDIszRyMptOkjfPL5Cvlay8ZqBjPYOLRW6YRbx0otaB0QO8yOvH_Ce-3QZfDDMT1oRmSXs2dgeQTQuzkvmflVN-jVhhEwBs9O3JiXimBYurzrTqvpGd6T7pgVmEQzGyo4eSmYhBpdmAUd-S69iehaiC-sMGz0RHWBsEUFNn47yhfmutwMX6QIfiv63B6gxv1HIFsRItAnIZxJkuucxNLgqj0NF-oVDMnyv0gs1Bpu6hGVywrqsSzFmhsZ27SH6PYdGFH-Pk0ExwtfQO5ZjKwfF5T9URMTEipdgnu7f24QfBMjU7t7M4vecF7HYF_TOj34K54j3soydbclmxBXNZ0-r1aV-i6nH5jsjcjCyf4B7Ga1stUEyJrouazS_iWHSuWwVQM8Lq4SSdfh1brKgCl5dj7KwQpOC3-m03Cb6DtPiBruKKgQ-kLoszYb-zbIiw.nQId8oMI_hgMgfQX60YtBg",
+			"disabled": true
+		},
+		{
+			"key": "Authorization4",
+			"value": "eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2IiwiY3R5IjoiSldUIn0..MKnktMVw_Gvr0xjAnn67Hw.szB5sciJU8_SR7qnFBrPpJ6JnLSqyaZfAH7jmBFoixES8U-JvgEMxe8GtUMeye9ckjS7gA_eXTM1FTK7XwLkbhA7WCa5bx4Q4qvTt9ALSWzcON2m0HDIyP8KcdkSMq_uAVyBM3oQo5Fepj6E2_OuD5znewASYGbqaaXW5jdguX4IqEhh9iYBQJB-DqWBHfRDVMzO4mWWEyuCkOdravXjkvENgWp_iN4HymjNaPMO8O0I37DSRy-KJo2TDwFPzzDHWQdeP66xkxTUwqrFFoUc2839hijDfxJlkw6DmlYSN6Omg0AGuwTymZKqUHL5LJTQQFRjQVHN63UnwpRGOPq62bNsK0puFwbPNN5kEsgocKxewGBVtKPz3_Ors55rDvRyeEkgjqDJG4PndBOxxtU-iyMTJ1jdNgx_G1c_CBByWNuu-M8ShqoWxw3QGbDGKXBptGIwqKJ6YCVGEzsi8ZNLeQ6N_TxwRk2vXR6bI0qoR0ZVAvXSNKPDcUI-hZtTY9NqjqcYm4P8G0MATKI5-c0QVkHqsYHzqVr1Mb4X6uM8IE-hQ-rqeMRQSodTZciX-8OsqoDuuzCIiLXWE9nMfr14OcfJWud1LVesUstTd23MbO9AP88tdPWwEzSOm_l3_R_REST4TNQje7xeB2hzwfuWqXfHpv-7lQ5vn7p90J3ork8sAIghbpffonRQ5l7_CkL7fjwtj6TOPoCD6DPV2VEDLTmpvWcxuIpU8dgA3QZS5551elKXtGEqsIwdsrwIsTa-EE1-WxfIWITUcan4HFNYPzhYZ3mj3dScTqDpqViPEZQf84Fkhhi0j6yeCG_U3S7bFiRInhUtKNfzBfKZukRlORES16vrDd0K4qel0wgjXQiHuqj2ZfAWZM-Cx2Fz131W35XCheg9_XbeWNS3nb5x0jNngR16DdQeStpoPDgzrM_dzVaHX5TczSy3fIfHKM6ibPJbBSZoTX3T6y8bzqiCUG8umpsHefeUnwrb7TktEY9dVTlnX-ecaK-h2Jz4WMvklGt6cDpiCEJfUGqDQQ8U6Jv0QKsWisfTTQuTyQTZxOt_KsNJIVJLpoqCkNeZF2_z_kaFEBGb974TWNuuMWbAY64svfh3eUFYv-ThcQV6QyL5LQsBvo16mfJg7IhUFrNsequHkqVXe6_q1bKBI4bsFafq1KrWgff-De5r0QYdzNa-SglLwpDKy5aTaVdA2cGA7REzQyoAet2YjgYkthjWOlMwRbNMaP76pse04bh2zK3ohogDvOgYImB1Foj9OjQJinRvOj6FY4e_REj559QKrDsU1QjwOrhh3_Uz4Qpxu3yN72DCXt6C4LyRAYIm-kc4iUORMrTBLQqubOMEFhswXTQZMSoOc5u3s8doF78Jzgz8oS8X0-bKSo_Ja_UfC1uHVlDXYYCMFbVpg2ie51xRh0p1IPpLKHVqwsut4vXquIReKYvY-i5J4NazIWX0DTfCaAFMGqGjCGx5g_TVNtJvDDta0j14Zdh5VRQviXHRHPdkff7eQvgIPgwgFCfYKdanKM2oSocchosFvetFddsMc6ZUaELUnnmp5UqA4M2M681fVF5Dbym29IFGxs5w4fcJYBRsdSzE3921ammZJe2kQd8eH8v5cZjpe-FkeSNOEDu5FNYIGjkqjDIGKWWRakSunnba2WJUA3cwdoQsNtJapcAYFOdvFkHxcbIXOLv24hzMCJf-q3EirSK57X4MiDK5X-9Jy3gDF9U4bX1EaWVTWJxVm_sQcdABgYYJAfx7r8uZQSDICDECdDFcFv2lbbXoWcu6X3XFt_cWqE_VqmgaXQyrJL83H4n94GTjXmVJ73iQTGgRjk_YJ6bM7R1FGOYQNJkD1Lvb0DX33IYjH4dTMCrj22dvVrfuXAYK55LnHXvi052OjeWiGUbFPwXdq0t42JnNZCwGwObJRAs2oTt-oZ4JuIbwIaGPIdS6iRfbhM-0VBNCvQAmiUUsvXDb5SHk5JseQ0Jl4JjvUrEvsWXL1BBNWe7isxoSiAAL0mwb4Y-MDoEG8oys8jHIYOVOwkBYPHmfZEP5ifgw4Xre_MSe0RJwdFmEGdF4bWMMfPH-8cdnAbI_iBFJKJKIIrIiGaLRd4-Qg-boBvtLPoKpGxiYwBe2tr9aSNNjB9k9oh7FMY-eZwJ4Cdt3rtunGh4rW1c3bv68cSVDSnPb2uaGjr1JvPOXGp1QHIQTQumAuAxdgxCctPtzeyeHW-znjctiAPp3DFGoAwjhX4ei-1IKB5F_MgjJACULQYiEDlMF6CiwC6gaD5qTYKRlshG7ERaCSMHF28tIIzeImG8UaOq7vazZvOXZ7m4CJ0ZLsOBm9fCYNA7QmsemT2qoVX2cblBenfxdR1A6h_PiwHk74UeMrNBkGBkfclhEBgNHTjTO0JXgRihVWrXyWv7JSOHIqS1Ac2VRsiGGBzJGCSou5EdsYvRETS8SpRPDm4lmJHH3pBjYwK0sABUE7C8by9DJnFmuxDwyBftrU07vGFSm9XP9QFceuxgSECRQZcDfZxPNU91Ulvpj8bwh4ji0AcRwmex_sA1l1gm0AETJjxxAUZAhXyqfGgsS3tgpq91Zp7QoWDa6xC1V8kcIJdCvG0VU9xAfq9guKEQkVtWudXC6uXs1tuTGziaHhREm1AAcdABvXlFV0C1QFpab2kjhFPQjIQWVYkJsI6te3Rt9vT7liotkS6MEnmaOLIMngBr5wCurvz_Pjc27R8pkqydm-jZAT2cReJQEcAyoIjAJyi2ZEenTyM03LkROoxwpkH7Qkr7clldz6fil2ejUAidvBxWlvyhRf6XPL6ZVrHGbKADsJTEOqGml-_IdewYUUCDquF35jKKVVSO0L635dGTElv3YlEwIkOr9dxUi6SMqFKJ9iMdAxWXRTjn7ir1gXSId6ykbOjGiHdUxr7TnwLhmjsNeqWotQdGQp2O_Jd6DWzzRdJZky4_RfmmBdkWE5q7075wPvWcwvWkiqB1htbDEzm-IniHAkYhCqEaRy-kVK7v08ml5R5Hj0qWM0lD0dj8_3vqBvzSA8Bai9uEe3PmIPSmKCLu0nnhsi-xsXL0GyITxa5QPE_nESISYlhxeFMUOh-cUZ0iEPWG93zN7wwVmuiprVVf59cfbV6nChrzoATpX8oCKZs-nef5efULKeEqY6pWk4vH7wwbFJqOeWm1-IH3h0MrqByJ70oeBBioxmaKAOaM5gxbIyS_FtrGZ7WXbARnssSSu0fpV-XTAg9v0ZK1FNdULfBtI24meQvNEMH8xtNOabzaNxG2459R2_J_firchyjj5V4PKxocEl7QqqZ3GObY2BoRiZa6jbBA6t9DoTT-WlDxnNrw5pSVHSLzqQ0idc82RdeF3QAfR77Aibys7u1JXubE0YFWzFIa9_eV1D3WhKDFx1w.oi8teLjfCYjbf-5yqxfKZQ",
+			"disabled": true
+		},
+		{
+			"key": "AdminA1",
+			"value": "eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2IiwiY3R5IjoiSldUIn0..iV8IH2QrvfV7YPn3BOZIIQ.WSSyTV9GeIG6SlQFVWTvAc-BPMibjeaCmx5MXYRR7y3L1JsqaCXIjw7dGJwDFSalwizda9-ht24zbaQ-i1CGXhkCXk2sqTqQA1f9aVcry0zJgTCu7C3bmFXduc6Bfp5ifjxq7CtUWIxuDJrR3dGFMXFVWJLc_Xk52_etrqihao19VlFOQl0dLINuN7JMPiWtghfPIHzUmiFzZnNdzJ1h1iirex2v8lb9pNKGYs2PrkmYRymIjf5HqMxGt04P5iJOJ8J6NoIHUL8ow2zPxl6ajPFQapY6rQXV4Z_lLeo-xGgsfY-69Gyay3U-24hgG8WVgCEfKQGcQUvlgL9vXhxZNXaWT-T2O-a7UFB_ORFrri3y7LwTcEUMVPKc1mpnktwReaeptNV0ORKcI8chtrXaW7-8M-2ubDi5JM8NqcFJBNv7ihLWoD39a8kbB20inlzreC3Q1KWwqfeeLfdz8EInY8g4YUfoK9cSTdCCGM9dfFsOdkVaSsd7VgQOBK-kXPV0WR4JQ8K3348IACo24ZfOp9qzGikTWbj1DW9VDoazYAYZXlcdNsUQZ3DxKwIearmWZYkAWnb6kiwtlsQgnqQieg.RL3q_cjEVlXD6M2tBaN9gQ"
+		},
+		{
+			"key": "AdminA2",
+			"value": "eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2IiwiY3R5IjoiSldUIn0..QtnqFiKoxBRsAZftTV16Qg.-EytseDPFlr3ppYCSXhvKoiBCDpv4RVnT5Ol598cwWRxJnkNCxDMtQuaNd6Njej20dHLDRvgyoHUd6di6wEjAiOSLD8kanaKf86B0dlE4TRFlN_CeFKDZNkiplEqxfJnlrdyFUoeJ-fL1GAVky_yJrmRsiIBS00natJvLLlbiiWrzc_Es3aQ8kJZF8OwB02AjGa_4B3cO3kg-tKtvfVvwqz4ECAfVP6sEGCSBgv5h18vM-MLaCk_8xkKeVCSetiGICiUKsNplebjVfdeyGfXf3fDVqJ413XbjwvwJWv0LQ1tCdLaf6333nhZVNoYWjmyTo7jgSTTHzQ-RM5GISGfoquu_AVjevNdzMH4NQ9y-JxvuyT28iOCkIEXM-QnxQwXzuP2Rn88yTadbtgFj1usr3zCJ7vlGMbPsRc4UiJwri7C4MbyB-SKOirGbz2bcw7Iinc4OV_3qPiq5QBNhOq0HmzINarFxegG293IghiFf3cgaj6pz_n_auKQHStuGhjucHp-hCZCC6veIcIjPzR44cn3ePRPGAWGmDQahexQRhI5PDH_aTqy79-fXf7CFpLtOdNr5vuItBif2ozs_FNm8tggUoXZCvCxLXHCBwhFrrrTbXmlc2-29BhBgNyImdtHof8iw2HDViNprwcIfHRj7cS8-Pz3iyCUtAd_xqq6R7P4KDGTMWvMQ2Ui5XfJxu6Ihp6KI-5sd3lD1y4wZlfzq7DmlZBM-pwV35B7nh5OmHaPkPZ-IwnRYxXQxNR5z9y0keiSJFB0pD1C3t0XuhNfLWEDY9-JEEbkV8ePNxi1_k97E3VNJa0-mE1wDB1NsFYzxWHMMtfcsZbsYrNTSFRyWkz-7b6xnxg55hj24u-y5ft3CD_Guz6Ar3AzHwr2yPCgYZv4JKAb7PAhSrF_vzUNlcyTNEqI2d62j7VA2Kk1LC9EMlILRH9F2hztd-aflUJm7REHNLl_7E6YGjKUWnByg2CK37mjwgkZSQLASg1EYjL4ZutZBZEpydlbFXLRhRlK4RB-NBGMtpCYtzBLyLNxYXv7GD-Tg1yaRVpiACxFjpaKep1iFUahixlTQeIh_NdZSqLCjw8S1XzZdniY63xNyhkvgGMuhpgPQXtGeyusEJenZCs-o3Ja3-kZQEaFs3Bd7z-c7hcMz2AI_tPkoVmvlxqGJmdk0ihtWDWMLQkNQAPDZMBdVPXQ5kaobNcLXwQGCLmceMuuRwP7sj_ynyyJrL5ckhEr46lFJzjCQ8TiFYMdxKTpFwiYGUF7sN73qpq_edzxnxHJlaxNwEEkvA4uunzQmkhzf_7AwNpKUA12TxYrwyblg_5WJJAJVikBSsxgf66V2GvQcYczDsC3HdoGY8YIzINkbkukRU6v200FIkHX6oWEzllD_37-A2DMABBScEId0pHwovmk7v3X1x5SO20buKYPalDQahNtObIB13w9NYPmKvRecCJwmvdhtoTOW_7UPJ5DXG8l0dhnDG6HkImBL_Pd58FeUyJZBL894mmO8t7lN4dhBV9Yv4_h0qDEZk3z8Qv0k10bFaVEIY5woDJVqTr4xLVdR37O2m4qdQGzABu4eAHbDSZ8R820inKC5Oq-UzZo_Qj1x89gstwzOT3KOF8D34izr9M_xP1WHjZQm2iHQrRHFcA2sGQsh8QxwatoCsFNBSHiYW_ZEM9OJkaJ0TO3lB6vEPWWttil2YtujXii6FKJEvVF1QHPWmVM-D3PjvCpNLLP5yqIaxWnrm34Zr7KnnEs2FjSL05GlOAsXy8jG-xN1V2ncQVQWlMY_ZuItkoIfSzVBZ2ObAxugOWD-r7ERV-TXBfCgGFYSVUkroGslKmucGi2YtYNMuxgRB5WeU2w7EiGvcysKr1IxioJSfgQrnvsgeK1llZnFbPuQZhcdhzqoQumvsFqoSWcNgaNNaEHyloYDRDBDG-uTxJUePcTp57f8XhXWOfI4iYv0qcssH06UalhpJQN2olRBsWp2sOEJL6Cj0b0Lpvbc2W3Ie_Ofdug5YEuArWeElDBTKHLXcCm5zWo7UPRrr4Ew7kIR5fnOFLPR2CbXY8he1rZbKQMOSaAr-RzvSnndcWgzKwoXDDslJMXEOyk0bRlB49jV_e6KVee8Q57a5G9YpQmcqnrxqnoG68alFVwuVi9cZwIA2lFYNcL2f2CH_O9vJhK4dMEAlzPMLPEqG074Q3rqRLUJ8N9jsyMxqzuA_BfIX_e-6HVY5w_cYvP5_0bg_NKVdYsukMyMFVfgU4KaSwrK_MTwFo6N3oIOnFZtrn2U9Ak56Jb-1CJS_4INWmg3StmapDxRziIwPWfWEeJOxlFftuJRscv4gDQCsW404l0hVoC3pn_axTGpo8PZdpfPywZUJv6lGGFwtH-83SPz_HroKLm-FSdV3NSxLh73qdh2I7i-4Ag7tA46bM5MAqpcjPcPciBe-gGQQPEjA44Tp1So_nAhk4QxXHYLVJhH8Lvp_iSksi6FzHKKMfAJpEioriwBMXxPjx8j9lZXoOrL8vmqHVgFPMJeIGYLd-hQvPAUMscFo7KXO0MWnJEigK8A0tlUGauTuQ80bgeEfu8ZJW0xV4VdGlepJWRCFpzMNtWs5QsaJoKREYIICM0BPQlElUZRIx0pVGCZ6UqzoE62ToyzIdEDuAh-VO0BUTwhTXvnwJS4o9ToskmqLNmkdeoDnACXCDyHQztTuBNJiXPC6F5fHA19tBQVyaYe5B_efnhplJN8IMgGQYP3c2ZpdowZpsNqKSPulN7pzggF8tGZnGthQ2BAHNGckBb-ko6UxHFet_z9Daqgd9mmd5cArSRSBD6LMoMjd8C96mFvMMGlj79AFB4RQ2ic3ZFfuNp1JioiOoEddZZLJ8kDDnZqgxebDfc-axRJEEdD7F1sdFoGUh9eOj4siNnMUoqgLcdM5xF8Eem703kfv3Ks56iqoayqO65lSJdff8OjutTDVSDafxQ7VbPVH8z8I7RsFVqY02qqOsAZfGbisx6o0CdeURpKkAYivE4TJ340uriswhzE7Xo12K0iBP5wkRaBGyEXt4F2Zi9BAt4UsPz8NsT1rY9iyzwDzONf0Faew2boFRN_XhnZsRanVwhdJaxTDS7tFztEcZaeCQTvCKrFPSmxnLM0NZQViAf2S0MVOHarfwMcZzxwpFk2Mo1QfB-46Gm3HuPkVBYm70QJgfVc8NG74LwQdBWH42A4vEloMKY38F3ilb7fn5VY_FHr4fvZCZObvpd-MuHhjPAju9g3kuCxfRNcQ6RYWVPtJQ8IbKjjoO9NQnorQLQgbRDnSupIFpBk1lBuEOxU86O_BPgFSRlw6sX9JIWvhcs515m2PoJeltyctWkcqkm0YaYfoVJ8fMtbvtcr2kZAiEoWo0FTLc-OtBkgKZWKVJCUCLAhOKvY_0gFw.7Q43adxEoIvigFUlhyn6_w"
+		},
+		{
+			"key": "AdminB1",
+			"value": "eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2IiwiY3R5IjoiSldUIn0..sR-tdhjehDLkSqhfzWItlg.889q4ljRrLmh_duGMq1cQG7ZAFpb8VwiA1kW8l5y8JUe5XAnGa0HeetQVkTZvWiX3HNAeB9wEkgNiYCrZWHRXqw_vO2rNyncFOcB_NhGo4rOCTHqVNkJ1raYRa9n1oLdHu_zmpQgjJse93Lf124xGamzl7Y_HoYk_dmP8qFxiPTYTTN-evHsBYWIIi58utgrNaR3hx_dK-9WEpmcIKszj7F2yM3papq9L_-M0NQhuJGki52EyL2ZvS8eM-ZPXCknnoXwsieOW7a5KwVC8LGYxax9MU0yLxev6i12oNt-NGyySs5eYGVfzQWNwHX4s4e0U-XAX3soSi1lXOSC6tXQTxvGrqYdxwI5rkjuf6DV81AYe5EDWS7bnDJRCgqk2jXf7EiuYF4V3Ph5gFAZFTFzxhuOIgsgGVitYUp48FWoqi5uRQ9ruFe9tQjHD39bWU0yaKs8IwfFqBeBCKipoFzPYFN2SMZTsnZdAIpuBz0SKISSVF52Aj4R29mIPQvb1iTyfWnTpU9uKW39NLbKbxOtU-o43pAKxH_uTNp_L64AGeLp3FdhlEUgCACCuQGai94zETTblbbx_M7MXD8EWlT1BQ.-FJ9hbt3VR6vy_qRlA5SRQ"
+		},
+		{
+			"key": "AdminB2",
+			"value": "eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2IiwiY3R5IjoiSldUIn0..tLZ7BDPpqtCUTXeFTLMFTQ.ObihrBN-mTX3jqaUbv4H5g0HG5sLWGA1KmvkmNexBB3caMkegi67w__ncxupCMZarW4Xneq0jUoYHABXpckO_0zWbZwOX42x4oo1d4yVwzCNzMvsc94XngVCQPikVS8h51ICs37V-No3yKofT3VUvF9cbEGuxrzmO4kmXndF7X5XTpa-VJTMsn8sr2PQvhn0sEONaLJgxORHcGdAt2tgtSi21Kw7jnnVXgX3kDCwnzWLGfQ_jd5H63tsmWlDGMLKi4BYiAUio0hL0W0Me6PFYlSiQWerMOCuhbkPLz2ZDFstV1Fl0CbMmXruhA28wWTuj6Y61g5iOnDP41nSg_ASTwrW9t8TbCIjWiOz-RF_mC7KE9RStK2pmvkK-83dDQHM7RFc_4YHeWkSCB6PD7dM42lYPfaG4CC52qmIS1DrEIW8GyS1Ns3aBlBLge1y8tbrnVbaNrQ2O1VkMNXrXsKyQjKr51nUzppPEpBbPLUwDUQQ_07bAsVyQjNF8cK3Q9Kg8GTkV3NOeTTtwj_lP5zCxW8NlhvsZYCNwZKg8ci0_u7JZUiT9lJgbYFpcbw9owbaLcGmfBAonjsVYgyZOTe5-1yvtheBO7SXwPxXizTAdAhc55PzCaiVq1MIu-ta3CUi8OZ9A2kBu1_gwcnz5fzXvrJr1Ys70_2Z37uloktj0NCOFvel1EPfEzCB23AX7IF75jf2_-nBxi96RADmLuP-iQAjHKNwdkK0ENN7k9PTvJbUJSeQrbJGCX50rK7OvnWzO660ilFFHDe6__Hgsjj6pA8zPivPJrxaU4tIv5SUYndJtyro5CKLDoMBgVdTWHfjp3fK2fcH68qcFs7VAKRadZH8vnqn14A-k71ZZSZr_caXv-_tagFzLbPpiWLy97Om2QJ8u-eJ0NkOzUkeF4a1oQNFivv6l7bTwxwAqgW6OTyNW9A0StPmCThws-uOc-P1TdiZzfabhZit4k3XPGto-mUvkdfZs9QYjf6-lZ6PV6BelFc7UFwV5wvVy26jzEHhQqb8qxuZlELaoenI5YjoZGv-KdSxI3YDJRzvAWXsUu1fxVyKPclZsVUMfoHxcS03daBfis9VEChowENu2cWHasvqdttJDC1N2ZCkEqELqmhyNnr-xx5q01rUHz4--pLP_uZHPGD4fawbsCcFxDWii8xwd_anemMTXIFp-QqfXzq2Jp8z2apc3YYTMgyRl-Er9fuqw9fB7vXhxsB5MFkhVnH6ufYa7hdbnyCO_188wBuyVmzeeQqWOiNeOA1NMyykHudJnRDvnN5oQeqmAutISCDbLt93uFV9-PeSS93JA6fQ_AZUOpsb-07z_cndZOZRvtprvk4oV7hfi6XOqV_WIIiLgarPT5NLIyMnTXZayrj7yg8CUukc4lLw4VAxBFEEVMsW9ts_grndPN1-w2-7DXfp5iMKztQf2VVPG85ul7LpSH6ubhCCFGOudVFYiAM1-1hvhMrF8ptFG7OJi8QvgD44yEC9-QLdUm0FV-EIlfgEh5F5JywFImfh8hDIJco6NWL15GJ6e9IlOa3uf11hIrU47cOX9_4mlGAD7SVCuM-Bh0GEylnE5avqSBYFdx122s7ypZx1VB3JIcFHD9ZG4O_zhFmh9gmjiADuvr3wB5lg7UUujAwaNbpic_9bjSZSt-aMH5CXdPIaVDVBAyfhRxETplgi5-bemyS1NIbUFHnt4ngJioNeaJd8-nKPTstkhKJxgd2klR4x6VbyTimTa-cmdskaDhvyMSMt_kNlPsbGkUhVs181Vcy8sEQZ-xvJ4_qhe9p7979cMfrBmW5IrgqxDgdUjCiAyn9CNe0WGO5-Il7Je7HienPe-y4Qp0uuxbKg8TNrz7qYeJYe5Pn_UBvJf3a4M_T2oEUuoxynhPyBUdE4ZJY80S2ItT-86MY5YFkO5-CFufFMqUgoo7ioZnEyHYOKfmp1R0qiBIqWjOK_9QqwlSBOAgkji1-gyb1i7C8g16yz2FDZAxaD5QqGVfKgBX8GAv0o3FnFpuuEByKeQGXg_Rwd9aK0hZ26RMfZMoEfQyPF2knxhKIyAxbjBpQBs8w7B0pP3QcnRJDS7MPTtHGfMyC2NZVG5la6tkUQ5T5jy34rHdZAF1Q09wHpYJrVhyFh1xjL4frTPC1sSH0I3o6Kb89T1cMxB_-hyB5LDsdZoA4HOL1UkCCZQk7LDMRjEt6qwVvfwMCmeVO_H9KOl3brBfUVa7fgDdsGDQq6u2GKxtHKIpy16jULd14KMjScENKRQA_6k4QJaoAy3fVZZVSTMaYPbYRJ7nqvqcnqozzC-TJCR7dgFlAhRsvhifrW0Bq8_QbcPmTbzNdVDMPtEHTmkdXchRsRj5vvrYjoXB8nWiIbMxcf7qeao0mwLG6V5VTW835g7Bhr-uHneenBd63VoVpYadeDhEGTMgZZnTkh45OO1oxgqy5LocN0Jm-xdN2Ys6553W_jZPnfkERDjzI92sTRqLc9DOi5mXYbQg4m33DAOyYU2dH_7ad8aX0zsCNUkLHe3QmJBc0cUpSqWtexP1XngKFdFy0OXqJ1kFobIwjjp_LzbjdAWoPFAGFqPl1kpJmfRRIX3SkLldcsNmFw2FLbQVY1yH0M6uAOnrhh76xhdvEwSNFb6xwM20CLh6c_lfDcrPkwhuCQtsQq3l7_Rb5aOM5Y1BH4kjtNRDgwi6EV6FxdyO9tz8wpa-6M9tzXFwVcBnig1nf-QEvVj2aJx21r7Qi4AlUwhS2rTDTiUBjERvtrrecH1pSFRqjL9XNiuvs9xsiPTFgxDFoixFQcdf6Q4a3P9M57xjN2nSMq2NznvhZolq6B9Pvq-KRniB6fq68Fo1C2gjWo7-J2SbioIRZaMflrbPtVmWxp_iL2U1T-jG4P0wrOranT-ses1ljSXBnMBGbOqswoSH8szvRvREWf_LV8rUIE8seD9ON8XKI2QHHUa6c9ZaW8tbE8oy6NHNgF5QUibczoQAXsM_80Xld8PykkdWtfufoa7IgdsSwhfjvOCMBWPWUw1JPekEu7t-gSVGEGjOufUnEQ7S0LNPYpRR3VneAxtQMlC0RtAbldiBRTMhkxQz3Rd7QkazyWm9wD5wgqaqjkgiy7-4acvq4NIAxso0fWlAB5BiQ3Fw_qjefuKD519X7cB1XxPAbisAYg3_WfpWZgpZPoHBvlz0_iSnvJlaencRkDtJJV4m6sAcxeK-1qtiTtZFyvIsA_IvuPa8xURQFuS8CQ5dFNya2-qn8kn2WJj0MT5RQOMEEGANpp9_4NK8xLKZGmBGflkAEgVLZLNUM-4aheLPNuRsFDO20z9Pps-3IQEn6bwoaZnpU-Qb_YBK_cejzUO7tESRpKn8-EZN9BzkvesS7mxuJBXjAPVVB9FwiuOsxREanw8Yw5eTpgweVnxQ.hi7EMHpGYuMqwW9AYAxQbA"
+		},
+		{
+			"key": "id1",
+			"value": ""
+		}
+	]
+}

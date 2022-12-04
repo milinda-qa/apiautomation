@@ -1,0 +1,1447 @@
+{
+	"info": {
+		"_postman_id": "af143822-57ee-4596-9606-7a0f4da54d2e",
+		"name": "Bankxp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8164109"
+	},
+	"item": [
+		{
+			"name": "Account Holder",
+			"item": [
+				{
+					"name": "Register",
+					"item": [
+						{
+							"name": "Username Validation",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"channel\": \"web\",\r\n    \"recaptchaResponse\": \"\",\r\n    \"username\": \"9863457112\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/webbackend/v2/user/activation/username/validate",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"webbackend",
+										"v2",
+										"user",
+										"activation",
+										"username",
+										"validate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "OTP Validation",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"activationToken\": \"9801114617684938af-84fa-4e96-b1ac-bfa341adfd6d\",\r\n    \"channel\": \"web\",\r\n    \"otpCode\":\"{{otp}}\",\r\n    \"username\": \"9801114617\"\r\n}   ",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/webbackend/v2/user/activation/otp/validation",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"webbackend",
+										"v2",
+										"user",
+										"activation",
+										"otp",
+										"validation"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Account",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{username: \"9818145749\", accountNumber: \"9818145749\", channel: \"web\",…}\r\naccountNumber: \"9818145749\"\r\nactivationToken: \"981814574927aa815b-b59a-45e5-8b4b-c415a2945e36\"\r\nchannel: \"web\"\r\nusername: \"9818145749\"",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/webbackend/v2/user/activation/validate/account",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"webbackend",
+										"v2",
+										"user",
+										"activation",
+										"validate",
+										"account"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "\r\n1 / 3 requests\r\n880 B / 1.5 kB transferred\r\n234 B / 594 B resources\r\n{username: \"9818145749\", accountNumber: \"9818145749\", dob: \"2001-01-01\", channel: \"web\",…}\r\naccountNumber: \"9818145749\"\r\nactivationToken: \"981814574927aa815b-b59a-45e5-8b4b-c415a2945e36\"\r\nchannel: \"web\"\r\ndob: \"2001-01-01\"\r\nusername: \"9818145749\"",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/webbackend/v2/user/activation/validate/details",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"webbackend",
+										"v2",
+										"user",
+										"activation",
+										"validate",
+										"details"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Confirm Activation",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"activationToken\": \"9801114617684938af-84fa-4e96-b1ac-bfa341adfd6d\",\r\n    \"branchCode\": \"009\",\r\n    \"channel\": \"web\",\r\n    \"emailAddress\": \"info@f1soft.com\",\r\n    \"firstName\": \"SUNRISE\",\r\n    \"gender\": \"F\",\r\n    \"lastName\": \"BANK\",\r\n    \"loginPassword\": \"abc1234\",\r\n    \"middleName\": \"ooo\",\r\n    \"otpCode\": \"123456\",\r\n    \"username\": \"9801114617\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/webbackend/v2/user/activation/confirmation",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"webbackend",
+										"v2",
+										"user",
+										"activation",
+										"confirmation"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Confirm Activation",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"accountNumber\": \"string\",\r\n  \"activationToken\": \"string\",\r\n  \"atmCardDigit\": \"string\",\r\n  \"branchCode\": \"string\",\r\n  \"channel\": \"string\",\r\n  \"debitCardNumber\": \"string\",\r\n  \"deviceDetail\": \"string\",\r\n  \"deviceId\": \"string\",\r\n  \"deviceModel\": \"string\",\r\n  \"emailAddress\": \"string\",\r\n  \"firstName\": \"string\",\r\n  \"gender\": \"string\",\r\n  \"lastName\": \"string\",\r\n  \"loginPassword\": \"string\",\r\n  \"middleName\": \"string\",\r\n  \"osType\": \"string\",\r\n  \"otpCode\": \"string\",\r\n  \"txnPassword\": \"string\",\r\n  \"username\": \"string\",\r\n  \"versionId\": \"string\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://10.13.194.173:7080/v2/user/activation/confirmation",
+											"protocol": "http",
+											"host": [
+												"10",
+												"13",
+												"194",
+												"173"
+											],
+											"port": "7080",
+											"path": [
+												"v2",
+												"user",
+												"activation",
+												"confirmation"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "Text",
+									"header": [
+										{
+											"key": "cache-control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate",
+											"type": "text"
+										},
+										{
+											"key": "connection",
+											"value": "close",
+											"type": "text"
+										},
+										{
+											"key": "content-type",
+											"value": "application/json",
+											"type": "text"
+										},
+										{
+											"key": "date",
+											"value": "Sun, 24 Jul 2022 10:15:14 GMT",
+											"type": "text"
+										},
+										{
+											"key": "expires",
+											"value": "0",
+											"type": "text"
+										},
+										{
+											"key": "pragma",
+											"value": "no-cache",
+											"type": "text"
+										},
+										{
+											"key": "transfer-encoding",
+											"value": "chunked",
+											"type": "text"
+										},
+										{
+											"key": "vary",
+											"value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers",
+											"type": "text"
+										},
+										{
+											"key": "x-content-security-policy",
+											"value": "script-src 'self'",
+											"type": "text"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff",
+											"type": "text"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "SAMEORIGIN",
+											"type": "text"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "1; mode=block",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "activation/activate",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"activationToken\": \"9801114617684938af-84fa-4e96-b1ac-bfa341adfd6d\",\n    \"channel\": \"web\",\n    \"password\": \"abc1234\",\n    \"passwordType\": \"GPRS_LOGIN\",\n    \"username\": \"9801114617\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/webbackend/activation/activate",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"webbackend",
+										"activation",
+										"activate"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"item": [
+						{
+							"name": "Customer Login",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"pm.globals.set(\"TOKEN\", postman.getResponseHeader(\"Authorization\"));"
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"password\": \"{{pWd}}\",\r\n  \"username\": \"{{userName}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/webbackend/v2/web/login",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"webbackend",
+										"v2",
+										"web",
+										"login"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Dashboard",
+					"item": [
+						{
+							"name": "Menu",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"channel\": \"web\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/webbackend/v2/protected/menus",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"webbackend",
+										"v2",
+										"protected",
+										"menus"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Bank Account Details",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/webbackend/v2/bank/accounts",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"webbackend",
+										"v2",
+										"bank",
+										"accounts"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Balance",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"accountNumber\": \"{{accountNumber}}\",\r\n  \"token\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/webbackend/v2/account/balance",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"webbackend",
+										"v2",
+										"account",
+										"balance"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Recent Transaction",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"accountNumber\": \"{{accountNumber}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/webbackend/v2/recent/statements",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"webbackend",
+										"v2",
+										"recent",
+										"statements"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"auth": {
+						"type": "bearer",
+						"bearer": [
+							{
+								"key": "token",
+								"value": "{{TOKEN}}",
+								"type": "string"
+							}
+						]
+					},
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "Account",
+					"item": [
+						{
+							"name": "Balance",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"view= JSON.parse(responseBody); \r",
+											"\r",
+											"console.log(view)\r",
+											"\r",
+											"value = view.data.accounts[0].accountNumber\r",
+											"\r",
+											"console.log (value)\r",
+											"\r",
+											"pm.collectionVariables.set(\"accountNumber\",value);"
+										]
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/webbackend/v2/accounts/balance",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"webbackend",
+										"v2",
+										"accounts",
+										"balance"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Transaction details",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"accountNumber\": \"{{accountNumber}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/webbackend/v2/transaction/graph/details",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"webbackend",
+										"v2",
+										"transaction",
+										"graph",
+										"details"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Statement",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"accountNumber\": \"{{accountNumber}}\",\r\n   \"fromDate\": \"2022-06-27\",\r\n    \"toDate\": \"2022-07-27\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/webbackend/v2/statements",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"webbackend",
+										"v2",
+										"statements"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"auth": {
+						"type": "bearer",
+						"bearer": [
+							{
+								"key": "token",
+								"value": "{{TOKEN}}",
+								"type": "string"
+							}
+						]
+					},
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "Payments",
+					"item": [
+						{
+							"name": "Recent Payments",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/webbackend/v2/recent/payments",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"webbackend",
+										"v2",
+										"recent",
+										"payments"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Quick Payment List",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"view= JSON.parse(responseBody); \r",
+											"\r",
+											"console.log(view)\r",
+											"\r",
+											"value = view.data.merchantGroups[1].code\r",
+											"\r",
+											"console.log (value)\r",
+											"\r",
+											"pm.collectionVariables.set(\"merchantGroups\",value);"
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/webbackend/v2/merchants",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"webbackend",
+										"v2",
+										"merchants"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Fonepay merchant List",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/webbackend/v2/fonepay/hub/merchant/categories",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"webbackend",
+										"v2",
+										"fonepay",
+										"hub",
+										"merchant",
+										"categories"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Mobile topup merchant list",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/webbackend/v2/merchants/mobile-topup",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"webbackend",
+										"v2",
+										"merchants",
+										"mobile-topup"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Book Payment",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"\r",
+											"view= JSON.parse(responseBody); \r",
+											"\r",
+											"console.log(view)\r",
+											"\r",
+											"value = view.data.bookingId\r",
+											"\r",
+											"console.log (value)\r",
+											"\r",
+											"pm.collectionVariables.set(\"BookingId\",value);"
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"accountNumber\": \"{{accountNumber}}\",\r\n    \"channel\": \"WEB\",\r\n    \"fields\": [\r\n        {\r\n        \"label\": \"Amount\",\r\n        \"paramOrder\": \"0\",\r\n        \"paramValue\": \"10\"\r\n        },\r\n        {\r\n        \"label\": \"eSewa ID\",\r\n        \"paramOrder\": \"1\",\r\n       \"paramValue\": \"9849666189\"\r\n        },\r\n        {\r\n        \"label\": \"Purpose\",\r\n        \"paramOrder\": \"2\",\r\n        \"paramValue\": \"Utility Payment\"\r\n        }\r\n    ],\r\n    \"merchantCode\": \"{{merchantGroups}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/webbackend/v2/book/payment",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"webbackend",
+										"v2",
+										"book",
+										"payment"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Payment Done",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{    \r\n    \"accountNumber\": \"{{accountNumber}}\",\r\n    \"bookingId\": \"{{BookingId}}\",\r\n    \"channel\": \"WEB\",\r\n    \"fields\": [\r\n        {\r\n        \"label\": \"Amount\",\r\n        \"paramOrder\": \"0\",\r\n        \"paramValue\": \"10\"\r\n        },\r\n        {\r\n        \"label\": \"eSewa ID\",\r\n        \"paramOrder\": \"1\",\r\n       \"paramValue\": \"9849666189\"\r\n        },\r\n        {\r\n        \"label\": \"Purpose\",\r\n        \"paramOrder\": \"2\",\r\n        \"paramValue\": \"Utility Payment\"\r\n        }\r\n    ],\r\n    \"merchantCode\": \"EC\",\r\n    \"txnPassword\": \"1234\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/webbackend/v2/payment",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"webbackend",
+										"v2",
+										"payment"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"auth": {
+						"type": "bearer",
+						"bearer": [
+							{
+								"key": "token",
+								"value": "{{TOKEN}}",
+								"type": "string"
+							}
+						]
+					},
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "Send Money",
+					"item": [
+						{
+							"name": "Booking Id for fund Transfer",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"accountNumber\": \"{{accountNumber}}\",\r\n  \"amount\": 10,\r\n  \"channel\": \"web\",\r\n  \"deviceDetail\": \"string\",\r\n  \"overrideNameValidation\": \"string\",\r\n  \"payeeAccount\": \"string\",\r\n  \"receiverName\": \"string\",\r\n  \"remarks\": \"string\",\r\n  \"toAccount\": \"string\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/webbackend/v2/send/money/book/transfer",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"webbackend",
+										"v2",
+										"send",
+										"money",
+										"book",
+										"transfer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Transfer",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \" bookingId\": \"Nigb7Si481kuoLfxwlbELjNvZQwLQ==\",\r\n   \"channel\": \"WEB\",\r\n    \"overrideNameValidation\": \"N\",\r\n    \"txnPassword\": \"123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/webbackend/v2/send/money/transfer",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"webbackend",
+										"v2",
+										"send",
+										"money",
+										"transfer"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"auth": {
+						"type": "bearer",
+						"bearer": [
+							{
+								"key": "token",
+								"value": "{{TOKEN}}",
+								"type": "string"
+							}
+						]
+					},
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "Activity Logs",
+					"item": [
+						{
+							"name": "Activity Types",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/webbackend/v2/activity/types",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"webbackend",
+										"v2",
+										"activity",
+										"types"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Activity Log",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"customerActivityTypeId\": 17,\r\n    \"fromDate\": \"2022-06-27\",\r\n    \"toDate\": \"2022-07-27\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/webbackend/v2/activity/logs",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"webbackend",
+										"v2",
+										"activity",
+										"logs"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://10.13.194.205:11000/webbackend/v2/bank/accounts",
+									"protocol": "http",
+									"host": [
+										"10",
+										"13",
+										"194",
+										"205"
+									],
+									"port": "11000",
+									"path": [
+										"webbackend",
+										"v2",
+										"bank",
+										"accounts"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"auth": {
+						"type": "bearer",
+						"bearer": [
+							{
+								"key": "token",
+								"value": "{{TOKEN}}",
+								"type": "string"
+							}
+						]
+					},
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "Customer Services",
+					"item": [
+						{
+							"name": "New Request",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": ""
+								}
+							},
+							"response": []
+						}
+					],
+					"auth": {
+						"type": "bearer",
+						"bearer": [
+							{
+								"key": "token",
+								"value": "{{TOKEN}}",
+								"type": "string"
+							}
+						]
+					},
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Non Account Holder",
+			"item": [
+				{
+					"name": "Register",
+					"item": [
+						{
+							"name": "Username Validation",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"\r",
+											"view= JSON.parse(responseBody); \r",
+											"\r",
+											"console.log(view)\r",
+											"\r",
+											"value = view.data.activationToken\r",
+											"\r",
+											"console.log (value)\r",
+											"\r",
+											"pm.collectionVariables.set(\"activationToken_nonacc\",value);\r",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"channel\": \"web\",\r\n    \"recaptchaResponse\": \"\",\r\n    \"username\": \"9802215617\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://10.13.194.173:7080/v2/user/activation/username/validate",
+									"protocol": "http",
+									"host": [
+										"10",
+										"13",
+										"194",
+										"173"
+									],
+									"port": "7080",
+									"path": [
+										"v2",
+										"user",
+										"activation",
+										"username",
+										"validate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "OTP Validation",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"activationToken\": \"{{activationToken_nonacc}}\",\r\n    \"channel\": \"web\",\r\n    \"otpCode\":\"{{otp}}\",\r\n    \"username\": \"9802215617\"\r\n}   ",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://10.13.194.173:7080/v2/user/activation/otp/validation",
+									"protocol": "http",
+									"host": [
+										"10",
+										"13",
+										"194",
+										"173"
+									],
+									"port": "7080",
+									"path": [
+										"v2",
+										"user",
+										"activation",
+										"otp",
+										"validation"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "activation/activate",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"activationToken\": \"{{activationToken_nonacc}}\",\n    \"channel\": \"web\",\n    \"password\": \"abc1234\",\n    \"passwordType\": \"GPRS_LOGIN\",\n    \"username\": \"9802215617\"\n}"
+								},
+								"url": {
+									"raw": "10.13.194.173:7080/activation/activate",
+									"host": [
+										"10",
+										"13",
+										"194",
+										"173"
+									],
+									"port": "7080",
+									"path": [
+										"activation",
+										"activate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Confirm Activation",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"activationToken\": \"{{activationToken_nonacc}}\",\r\n    \"branchCode\": \"009\",\r\n    \"channel\": \"web\",\r\n    \"emailAddress\": \"info@f1soft.com\",\r\n    \"firstName\": \"SUNRISE\",\r\n    \"gender\": \"F\",\r\n    \"lastName\": \"BANK\",\r\n    \"loginPassword\": \"abc1234\",\r\n    \"middleName\": \"ooo\",\r\n    \"otpCode\": \"123456\",\r\n    \"username\": \"9802215617\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://10.13.194.173:7080/v2/user/activation/confirmation",
+									"protocol": "http",
+									"host": [
+										"10",
+										"13",
+										"194",
+										"173"
+									],
+									"port": "7080",
+									"path": [
+										"v2",
+										"user",
+										"activation",
+										"confirmation"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Confirm Activation",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"accountNumber\": \"string\",\r\n  \"activationToken\": \"string\",\r\n  \"atmCardDigit\": \"string\",\r\n  \"branchCode\": \"string\",\r\n  \"channel\": \"string\",\r\n  \"debitCardNumber\": \"string\",\r\n  \"deviceDetail\": \"string\",\r\n  \"deviceId\": \"string\",\r\n  \"deviceModel\": \"string\",\r\n  \"emailAddress\": \"string\",\r\n  \"firstName\": \"string\",\r\n  \"gender\": \"string\",\r\n  \"lastName\": \"string\",\r\n  \"loginPassword\": \"string\",\r\n  \"middleName\": \"string\",\r\n  \"osType\": \"string\",\r\n  \"otpCode\": \"string\",\r\n  \"txnPassword\": \"string\",\r\n  \"username\": \"string\",\r\n  \"versionId\": \"string\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://10.13.194.173:7080/v2/user/activation/confirmation",
+											"protocol": "http",
+											"host": [
+												"10",
+												"13",
+												"194",
+												"173"
+											],
+											"port": "7080",
+											"path": [
+												"v2",
+												"user",
+												"activation",
+												"confirmation"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "Text",
+									"header": [
+										{
+											"key": "cache-control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate",
+											"type": "text"
+										},
+										{
+											"key": "connection",
+											"value": "close",
+											"type": "text"
+										},
+										{
+											"key": "content-type",
+											"value": "application/json",
+											"type": "text"
+										},
+										{
+											"key": "date",
+											"value": "Sun, 24 Jul 2022 10:15:14 GMT",
+											"type": "text"
+										},
+										{
+											"key": "expires",
+											"value": "0",
+											"type": "text"
+										},
+										{
+											"key": "pragma",
+											"value": "no-cache",
+											"type": "text"
+										},
+										{
+											"key": "transfer-encoding",
+											"value": "chunked",
+											"type": "text"
+										},
+										{
+											"key": "vary",
+											"value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers",
+											"type": "text"
+										},
+										{
+											"key": "x-content-security-policy",
+											"value": "script-src 'self'",
+											"type": "text"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff",
+											"type": "text"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "SAMEORIGIN",
+											"type": "text"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "1; mode=block",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://10.13.194.205:11000"
+		},
+		{
+			"key": "userName",
+			"value": "9860055973"
+		},
+		{
+			"key": "pWd",
+			"value": "abc1234"
+		},
+		{
+			"key": "activationToken_nonacc",
+			"value": ""
+		},
+		{
+			"key": "otp",
+			"value": "123456"
+		},
+		{
+			"key": "BookingId",
+			"value": ""
+		},
+		{
+			"key": "accountNumber",
+			"value": ""
+		},
+		{
+			"key": "merchantGroups",
+			"value": ""
+		}
+	]
+}

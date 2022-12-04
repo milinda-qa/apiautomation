@@ -1,0 +1,876 @@
+{
+	"info": {
+		"_postman_id": "3ddcd189-b867-4e0b-91fc-ff18cd6baa0d",
+		"name": "BankXP Web",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8164109"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var newtoken = pm.response.headers.get(\"Authorization\")\r",
+									"pm.collectionVariables.set(\"authtoken\",  newtoken);\r",
+									"\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"9860055973\",\r\n    \"password\": \"abc1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/web/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"web",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"9860055973\",\r\n    \"password\": \"abc1234\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/web/login",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"web",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Authorization",
+									"value": "4RFXtW1L6WGbjWYzkADQKn0acAVIlStqClRbIbkCAxFjWTnf0tJH9Ny3PLwb7/UMKXL6GEVAM7qjzm3QqePCmQ=="
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Security-Policy",
+									"value": "script-src 'self'"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 21 Aug 2022 06:06:35 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=20"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"username\": \"9860055973\",\n    \"name\": \"Test testing\",\n    \"firstName\": \"Test\",\n    \"lastName\": \"testing\",\n    \"emailAddress\": \"swaumyapokharel94@gmail.com\",\n    \"active\": \"Y\",\n    \"hasAccount\": true,\n    \"hasTxnPin\": true,\n    \"gender\": \"Female\",\n    \"branch\": \"Syangja\",\n    \"hasSecurityQuestion\": \"Y\",\n    \"txnAuthMode\": \"OTP\",\n    \"hasPolicyAccepted\": \"Y\",\n    \"passwordStatusCode\": \"PA\",\n    \"txnPasswordStatusCode\": \"PA\",\n    \"hasTxnPassword\": \"Y\",\n    \"hasCard\": true,\n    \"emailVerified\": \"N\",\n    \"primaryAccount\": \"ACCOUNT\"\n}"
+						}
+					]
+				},
+				{
+					"name": "login using curl",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "en-US,en;q=0.9"
+							},
+							{
+								"key": "Cache-Control",
+								"value": "no-cache"
+							},
+							{
+								"key": "Connection",
+								"value": "keep-alive"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Origin",
+								"value": "http://10.13.194.205:12007"
+							},
+							{
+								"key": "Pragma",
+								"value": "no-cache"
+							},
+							{
+								"key": "Referer",
+								"value": "http://10.13.194.205:12007/"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "x-request-channel",
+								"value": "web"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"9860055973\",\r\n    \"password\": \"abc1234\"\r\n}"
+						},
+						"url": {
+							"raw": "http://10.13.194.205:11000/webbackend/v2/web/login",
+							"protocol": "http",
+							"host": [
+								"10",
+								"13",
+								"194",
+								"205"
+							],
+							"port": "11000",
+							"path": [
+								"webbackend",
+								"v2",
+								"web",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "login using curl",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json, text/plain, */*"
+									},
+									{
+										"key": "Accept-Language",
+										"value": "en-US,en;q=0.9"
+									},
+									{
+										"key": "Cache-Control",
+										"value": "no-cache"
+									},
+									{
+										"key": "Connection",
+										"value": "keep-alive"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Origin",
+										"value": "http://10.13.194.205:12007"
+									},
+									{
+										"key": "Pragma",
+										"value": "no-cache"
+									},
+									{
+										"key": "Referer",
+										"value": "http://10.13.194.205:12007/"
+									},
+									{
+										"key": "User-Agent",
+										"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36"
+									},
+									{
+										"key": "x-request-channel",
+										"value": "web"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"9860055973\",\r\n    \"password\": \"abc1234\"\r\n}"
+								},
+								"url": {
+									"raw": "http://10.13.194.205:11000/webbackend/v2/web/login",
+									"protocol": "http",
+									"host": [
+										"10",
+										"13",
+										"194",
+										"205"
+									],
+									"port": "11000",
+									"path": [
+										"webbackend",
+										"v2",
+										"web",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "Authorization, date, content-type, x-auth-token, x-request-channel, x-browser, x-device-os, x-fingerprint, x-device-type, x-device-id"
+								},
+								{
+									"key": "Authorization",
+									"value": "4RFXtW1L6WEQz7pmOLFL/3bf5+O9LlC4Z4FpoYxRfy+fIgQZnGgDyuNiTCfZ4fPN2Hgm+x6UtvqGnocNTjHhbg=="
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Security-Policy",
+									"value": "script-src 'self'"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 22 Aug 2022 04:44:07 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=20"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"username\": \"9860055973\",\n    \"name\": \"Test testing\",\n    \"firstName\": \"Test\",\n    \"lastName\": \"testing\",\n    \"emailAddress\": \"swaumyapokharel94@gmail.com\",\n    \"active\": \"Y\",\n    \"hasAccount\": true,\n    \"hasTxnPin\": true,\n    \"gender\": \"Female\",\n    \"branch\": \"Syangja\",\n    \"hasSecurityQuestion\": \"Y\",\n    \"txnAuthMode\": \"OTP\",\n    \"hasPolicyAccepted\": \"Y\",\n    \"passwordStatusCode\": \"PA\",\n    \"txnPasswordStatusCode\": \"PA\",\n    \"hasTxnPassword\": \"Y\",\n    \"hasCard\": true,\n    \"emailVerified\": \"N\",\n    \"primaryAccount\": \"ACCOUNT\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Balance",
+			"item": [
+				{
+					"name": "account balance",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"view= JSON.parse(responseBody); \r",
+									"\r",
+									"value = view.data.accounts[0].accountNumber\r",
+									"\r",
+									"pm.collectionVariables.set(\"accountNumber\",value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/accounts/balance",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"accounts",
+								"balance"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "account balance",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{authtoken}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/accounts/balance",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"accounts",
+										"balance"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Security-Policy",
+									"value": "script-src 'self'"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 21 Aug 2022 06:06:55 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=20"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Customer account balance obtained.\",\n    \"code\": \"0\",\n    \"data\": {\n        \"accounts\": [\n            {\n                \"success\": true,\n                \"accountNumber\": \"0535751574871001\",\n                \"accountAlias\": \"1\",\n                \"accountType\": \"Savings\",\n                \"accountTypeCode\": \"BNSAV\",\n                \"primary\": \"Y\",\n                \"currencyCode\": \"NPR\",\n                \"txnEnabled\": true,\n                \"hasAccountTxn\": true,\n                \"hasAccountCreditTxn\": true,\n                \"branchName\": \"Taplejung Branch\",\n                \"branchCode\": \"001\",\n                \"accountHolderName\": \"BAL KRISHNA SAMA\",\n                \"allowPrimary\": \"N\",\n                \"transferEnabled\": \"N\",\n                \"balanceType\": \"BOTH\",\n                \"availableBalance\": \"1,65,615.00\",\n                \"ledgerBalance\": \"1,65,615.00\",\n                \"interestRate\": \"6.5\",\n                \"accruedInterest\": \"10,764.98\",\n                \"accountStatus\": \"Active\",\n                \"holdBalance\": \"N/A\",\n                \"limitAmount\": \"N/A\",\n                \"dormancy\": \"N/A\",\n                \"noDebit\": \"N/A\",\n                \"unrealizedCheque\": \"N/A\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Activity log",
+			"item": [
+				{
+					"name": "Activity logs",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"fromDate\": \"2022-07-19\",\r\n    \"toDate\": \"2022-08-22\"\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/activity/logs",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"activity",
+								"logs"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Activity logs",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \r\n    \"fromDate\": \"2022-07-19\",\r\n    \"toDate\": \"2022-08-18\"\r\n}\r\n\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/activity/logs",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"activity",
+										"logs"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Security-Policy",
+									"value": "script-src 'self'"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 21 Aug 2022 06:07:13 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=20"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Activity login obtained successfully.\",\n    \"code\": \"0\",\n    \"data\": {\n        \"activityLogs\": [\n            {\n                \"recordedDate\": \"2022-08-17T12:01:11.000+0000\",\n                \"activityType\": \"Fixed Deposit\",\n                \"feature\": \"Fixed Deposit\",\n                \"featureKey\": \"FDT\",\n                \"requestStatus\": \"GPRS\"\n            },\n            {\n                \"recordedDate\": \"2022-08-17T12:00:09.000+0000\",\n                \"activityType\": \"Fixed Deposit\",\n                \"feature\": \"Fixed Deposit\",\n                \"featureKey\": \"FDT\",\n                \"requestStatus\": \"GPRS\"\n            },\n            {\n                \"description\": \"Dear Test, we are unable to Fetch Scheme Details at the moment. Please try again later.\",\n                \"recordedDate\": \"2022-08-17T11:59:50.000+0000\",\n                \"activityType\": \"Fixed Deposit\",\n                \"feature\": \"Fixed Deposit\",\n                \"featureKey\": \"FDT\",\n                \"requestStatus\": \"GPRS\"\n            },\n            {\n                \"description\": \"Dear Test, your payment of NPR 10.00 with Discount 2.00 from A/C 053###74871001 for 9849666189 was successful.\",\n                \"recordedDate\": \"2022-08-16T04:30:25.000+0000\",\n                \"activityType\": \"Payment\",\n                \"feature\": \"Payments\",\n                \"featureKey\": \"MER\",\n                \"requestStatus\": \"GPRS\"\n            },\n            {\n                \"description\": \"It seems we are having some problems. Please try again later.\",\n                \"recordedDate\": \"2022-08-16T04:28:19.000+0000\",\n                \"activityType\": \"Fund Transfer\",\n                \"feature\": \"Fund Transfer\",\n                \"featureKey\": \"ATAT\",\n                \"requestStatus\": \"GPRS\"\n            },\n            {\n                \"description\": \"Dear Test, your payment of NPR 10.00 with Discount 2.00 from A/C 053###74871001 for 9849666189 was successful.\",\n                \"recordedDate\": \"2022-08-16T04:28:14.000+0000\",\n                \"activityType\": \"Payment\",\n                \"feature\": \"Payments\",\n                \"featureKey\": \"MER\",\n                \"requestStatus\": \"GPRS\"\n            },\n            {\n                \"description\": \"It seems we are having some problems. Please try again later.\",\n                \"recordedDate\": \"2022-08-16T04:27:24.000+0000\",\n                \"activityType\": \"Fund Transfer\",\n                \"feature\": \"Fund Transfer\",\n                \"featureKey\": \"ATAT\",\n                \"requestStatus\": \"GPRS\"\n            },\n            {\n                \"description\": \"Dear Test, your payment of NPR 10.00 with Discount 2.00 from A/C 053###74871001 for 9849666189 was successful.\",\n                \"recordedDate\": \"2022-08-16T04:27:20.000+0000\",\n                \"activityType\": \"Payment\",\n                \"feature\": \"Payments\",\n                \"featureKey\": \"MER\",\n                \"requestStatus\": \"GPRS\"\n            },\n            {\n                \"description\": \"It seems we are having some problems. Please try again later.\",\n                \"recordedDate\": \"2022-08-16T04:23:16.000+0000\",\n                \"activityType\": \"Fund Transfer\",\n                \"feature\": \"Fund Transfer\",\n                \"featureKey\": \"ATAT\",\n                \"requestStatus\": \"GPRS\"\n            },\n            {\n                \"description\": \"Dear Test, your payment of NPR 10.00 with Discount 2.00 from A/C 053###74871001 for 9849666189 was successful.\",\n                \"recordedDate\": \"2022-08-16T04:23:12.000+0000\",\n                \"activityType\": \"Payment\",\n                \"feature\": \"Payments\",\n                \"featureKey\": \"MER\",\n                \"requestStatus\": \"GPRS\"\n            },\n            {\n                \"description\": \"It seems we are having some problems. Please try again later.\",\n                \"recordedDate\": \"2022-08-16T04:21:20.000+0000\",\n                \"activityType\": \"Fund Transfer\",\n                \"feature\": \"Fund Transfer\",\n                \"featureKey\": \"ATAT\",\n                \"requestStatus\": \"GPRS\"\n            },\n            {\n                \"description\": \"Dear Test, your payment of NPR 10.00 with Discount 2.00 from A/C 053###74871001 for 9849666189 was successful.\",\n                \"recordedDate\": \"2022-08-16T04:21:16.000+0000\",\n                \"activityType\": \"Payment\",\n                \"feature\": \"Payments\",\n                \"featureKey\": \"MER\",\n                \"requestStatus\": \"GPRS\"\n            },\n            {\n                \"description\": \"Your current email and new email is same.\",\n                \"recordedDate\": \"2022-08-15T16:54:10.000+0000\",\n                \"activityType\": \"Change Email\",\n                \"feature\": \"Default\",\n                \"featureKey\": \"DEF\",\n                \"requestStatus\": \"GPRS\"\n            },\n            {\n                \"description\": \"Seems you have entered incorrect password. Please enter a valid password.\",\n                \"recordedDate\": \"2022-08-15T16:54:09.000+0000\",\n                \"activityType\": \"Change Password\",\n                \"feature\": \"Default\",\n                \"featureKey\": \"DEF\",\n                \"requestStatus\": \"GPRS\"\n            },\n            {\n                \"description\": \"You have already requested cheque book.\",\n                \"recordedDate\": \"2022-08-15T16:54:08.000+0000\",\n                \"activityType\": \"Cheque Book Request\",\n                \"feature\": \"N/A\",\n                \"featureKey\": \"N/A\",\n                \"requestStatus\": \"GPRS\"\n            },\n            {\n                \"description\": \"Your problem has been submitted successfully.\",\n                \"recordedDate\": \"2022-08-15T16:54:07.000+0000\",\n                \"activityType\": \"Complain Request\",\n                \"feature\": \"Default\",\n                \"featureKey\": \"DEF\",\n                \"requestStatus\": \"GPRS\"\n            },\n            {\n                \"description\": \"Congratulations. Scheduled payment added successfully.\",\n                \"recordedDate\": \"2022-08-15T16:54:03.000+0000\",\n                \"activityType\": \"Schedule Payment\",\n                \"feature\": \"Schedule Payment\",\n                \"featureKey\": \"SP\",\n                \"requestStatus\": \"GPRS\"\n            },\n            {\n                \"description\": \"It seems we are having some problems. Please try again later.\",\n                \"recordedDate\": \"2022-08-15T16:54:01.000+0000\",\n                \"activityType\": \"Fund Transfer\",\n                \"feature\": \"Fund Transfer\",\n                \"featureKey\": \"ATAT\",\n                \"requestStatus\": \"GPRS\"\n            },\n            {\n                \"description\": \"Dear Test, your payment of NPR 10.00 with Discount 2.00 from A/C 053###74871001 for 9849666189 was successful.\",\n                \"recordedDate\": \"2022-08-15T16:53:42.000+0000\",\n                \"activityType\": \"Payment\",\n                \"feature\": \"Payments\",\n                \"featureKey\": \"MER\",\n                \"requestStatus\": \"GPRS\"\n            },\n            {\n                \"description\": \"Congratulations. Scheduled payment added successfully.\",\n                \"recordedDate\": \"2022-08-15T16:39:52.000+0000\",\n                \"activityType\": \"Schedule Payment\",\n                \"feature\": \"Schedule Payment\",\n                \"featureKey\": \"SP\",\n                \"requestStatus\": \"GPRS\"\n            },\n            {\n                \"description\": \"Congratulations. Scheduled payment added successfully.\",\n                \"recordedDate\": \"2022-08-15T16:35:18.000+0000\",\n                \"activityType\": \"Schedule Payment\",\n                \"feature\": \"Schedule Payment\",\n                \"featureKey\": \"SP\",\n                \"requestStatus\": \"GPRS\"\n            },\n            {\n                \"description\": \"Congratulations. Scheduled payment added successfully.\",\n                \"recordedDate\": \"2022-08-15T16:35:01.000+0000\",\n                \"activityType\": \"Schedule Payment\",\n                \"feature\": \"Schedule Payment\",\n                \"featureKey\": \"SP\",\n                \"requestStatus\": \"GPRS\"\n            },\n            {\n                \"description\": \"Your Transaction PIN is invalid.\",\n                \"recordedDate\": \"2022-08-15T16:34:54.000+0000\",\n                \"activityType\": \"Schedule Payment\",\n                \"feature\": \"Schedule Payment\",\n                \"featureKey\": \"SP\",\n                \"requestStatus\": \"GPRS\"\n            },\n            {\n                \"description\": \"Your Transaction PIN is invalid.\",\n                \"recordedDate\": \"2022-08-15T16:34:16.000+0000\",\n                \"activityType\": \"Schedule Payment\",\n                \"feature\": \"Schedule Payment\",\n                \"featureKey\": \"SP\",\n                \"requestStatus\": \"GPRS\"\n            },\n            {\n                \"description\": \"Congratulations. Scheduled payment added successfully.\",\n                \"recordedDate\": \"2022-08-15T16:27:37.000+0000\",\n                \"activityType\": \"Schedule Payment\",\n                \"feature\": \"Schedule Payment\",\n                \"featureKey\": \"SP\",\n                \"requestStatus\": \"GPRS\"\n            },\n            {\n                \"description\": \"Congratulations. Scheduled payment added successfully.\",\n                \"recordedDate\": \"2022-08-15T16:08:19.000+0000\",\n                \"activityType\": \"Schedule Payment\",\n                \"feature\": \"Schedule Payment\",\n                \"featureKey\": \"SP\",\n                \"requestStatus\": \"GPRS\"\n            },\n            {\n                \"description\": \"You have already requested cheque book.\",\n                \"recordedDate\": \"2022-08-15T14:32:31.000+0000\",\n                \"activityType\": \"Cheque Book Request\",\n                \"feature\": \"N/A\",\n                \"featureKey\": \"N/A\",\n                \"requestStatus\": \"GPRS\"\n            },\n            {\n                \"description\": \"Dear Test, your payment of NPR 10.00 with Discount 2.00 from A/C 053###74871001 for 9849666189 was successful.\",\n                \"recordedDate\": \"2022-08-15T10:08:23.000+0000\",\n                \"activityType\": \"Payment\",\n                \"feature\": \"Payments\",\n                \"featureKey\": \"MER\",\n                \"requestStatus\": \"GPRS\"\n            },\n            {\n                \"description\": \"Dear Test, your payment of NPR 10.00 with Discount 2.00 from A/C 053###74871001 for 9849666189 was successful.\",\n                \"recordedDate\": \"2022-08-15T08:55:06.000+0000\",\n                \"activityType\": \"Payment\",\n                \"feature\": \"Payments\",\n                \"featureKey\": \"MER\",\n                \"requestStatus\": \"GPRS\"\n            },\n            {\n                \"description\": \"Dear Test, your payment of NPR 10.00 with Discount 2.00 from A/C 053###74871001 for 9849666189 was successful.\",\n                \"recordedDate\": \"2022-08-15T08:54:59.000+0000\",\n                \"activityType\": \"Payment\",\n                \"feature\": \"Payments\",\n                \"featureKey\": \"MER\",\n                \"requestStatus\": \"GPRS\"\n            },\n            {\n                \"description\": \"Seems you have entered incorrect password. Please enter a valid password.\",\n                \"recordedDate\": \"2022-08-15T08:42:00.000+0000\",\n                \"activityType\": \"Change Password\",\n                \"feature\": \"Default\",\n                \"featureKey\": \"DEF\",\n                \"requestStatus\": \"GPRS\"\n            },\n            {\n                \"description\": \"It seems we are having some problems. Please try again later.\",\n                \"recordedDate\": \"2022-08-15T08:39:42.000+0000\",\n                \"activityType\": \"Fund Transfer\",\n                \"feature\": \"Fund Transfer\",\n                \"featureKey\": \"ATAT\",\n                \"requestStatus\": \"GPRS\"\n            },\n            {\n                \"description\": \"You have already requested cheque book.\",\n                \"recordedDate\": \"2022-08-15T07:13:45.000+0000\",\n                \"activityType\": \"Cheque Book Request\",\n                \"feature\": \"N/A\",\n                \"featureKey\": \"N/A\",\n                \"requestStatus\": \"GPRS\"\n            },\n            {\n                \"description\": \"Your problem has been submitted successfully.\",\n                \"recordedDate\": \"2022-08-15T05:45:33.000+0000\",\n                \"activityType\": \"Complain Request\",\n                \"feature\": \"Default\",\n                \"featureKey\": \"DEF\",\n                \"requestStatus\": \"GPRS\"\n            },\n            {\n                \"description\": \"Your problem has been submitted successfully.\",\n                \"recordedDate\": \"2022-08-15T05:39:01.000+0000\",\n                \"activityType\": \"Complain Request\",\n                \"feature\": \"Default\",\n                \"featureKey\": \"DEF\",\n                \"requestStatus\": \"GPRS\"\n            },\n            {\n                \"description\": \"Your current email and new email is same.\",\n                \"recordedDate\": \"2022-08-15T05:11:16.000+0000\",\n                \"activityType\": \"Change Email\",\n                \"feature\": \"Default\",\n                \"featureKey\": \"DEF\",\n                \"requestStatus\": \"GPRS\"\n            },\n            {\n                \"description\": \"Your new email address has been changed successfully.\",\n                \"recordedDate\": \"2022-08-15T05:11:13.000+0000\",\n                \"activityType\": \"Change Email\",\n                \"feature\": \"Default\",\n                \"featureKey\": \"DEF\",\n                \"requestStatus\": \"GPRS\"\n            },\n            {\n                \"description\": \"Your problem has been submitted successfully.\",\n                \"recordedDate\": \"2022-08-15T05:10:35.000+0000\",\n                \"activityType\": \"Complain Request\",\n                \"feature\": \"Default\",\n                \"featureKey\": \"DEF\",\n                \"requestStatus\": \"GPRS\"\n            },\n            {\n                \"description\": \"You have already requested cheque book.\",\n                \"recordedDate\": \"2022-08-15T05:10:20.000+0000\",\n                \"activityType\": \"Cheque Book Request\",\n                \"feature\": \"N/A\",\n                \"featureKey\": \"N/A\",\n                \"requestStatus\": \"GPRS\"\n            },\n            {\n                \"description\": \"It seems we are having some problems. Please try again later.\",\n                \"recordedDate\": \"2022-08-15T05:09:37.000+0000\",\n                \"activityType\": \"Fund Transfer\",\n                \"feature\": \"Fund Transfer\",\n                \"featureKey\": \"ATAT\",\n                \"requestStatus\": \"GPRS\"\n            },\n            {\n                \"description\": \"Dear Test, your payment of NPR 893.00 with Charge 10.00 from A/C 053###74871001 for 211/45/1/NEA-16601104171821511 was successful.\",\n                \"recordedDate\": \"2022-08-10T05:47:10.000+0000\",\n                \"activityType\": \"Payment\",\n                \"feature\": \"Payments\",\n                \"featureKey\": \"MER\",\n                \"requestStatus\": \"GPRS\"\n            },\n            {\n                \"description\": \"Dear Test, your payment of NPR 893.00 with Charge 10.00 from A/C 053###74871001 for 211/41/1/NEA-16601073796281511 was successful.\",\n                \"recordedDate\": \"2022-08-10T04:56:29.000+0000\",\n                \"activityType\": \"Payment\",\n                \"feature\": \"Payments\",\n                \"featureKey\": \"MER\",\n                \"requestStatus\": \"GPRS\"\n            },\n            {\n                \"description\": \"Dear Test, your payment of NPR 893.00 with Charge 10.00 from A/C 053###74871001 for 211/41/1/NEA-16601070143401511 was successful.\",\n                \"recordedDate\": \"2022-08-10T04:50:38.000+0000\",\n                \"activityType\": \"Payment\",\n                \"feature\": \"Payments\",\n                \"featureKey\": \"MER\",\n                \"requestStatus\": \"GPRS\"\n            },\n            {\n                \"description\": \"Dear Test, your payment of NPR 893.00 with Charge 10.00 from A/C 053###74871001 for 216/21992/001.08.003/NEA-16601068836091511 was successful.\",\n                \"recordedDate\": \"2022-08-10T04:48:27.000+0000\",\n                \"activityType\": \"Payment\",\n                \"feature\": \"Payments\",\n                \"featureKey\": \"MER\",\n                \"requestStatus\": \"GPRS\"\n            },\n            {\n                \"description\": \"It seems we are having some problems. Please try again later.\",\n                \"recordedDate\": \"2022-08-08T11:34:07.000+0000\",\n                \"activityType\": \"Payment\",\n                \"feature\": \"Payments\",\n                \"featureKey\": \"MER\",\n                \"requestStatus\": \"GPRS\"\n            },\n            {\n                \"description\": \"Invalid OTP code.\",\n                \"recordedDate\": \"2022-08-08T09:30:55.000+0000\",\n                \"activityType\": \"Payment\",\n                \"feature\": \"Payments\",\n                \"featureKey\": \"MER\",\n                \"requestStatus\": \"GPRS\"\n            },\n            {\n                \"description\": \"You have successfully set-up your security question.\",\n                \"recordedDate\": \"2022-08-04T05:26:43.000+0000\",\n                \"activityType\": \"Customer request\",\n                \"feature\": \"Default\",\n                \"featureKey\": \"DEF\",\n                \"requestStatus\": \"GPRS\"\n            },\n            {\n                \"description\": \"Seems you have entered incorrect password. Please enter a valid password.\",\n                \"recordedDate\": \"2022-08-03T06:11:42.000+0000\",\n                \"activityType\": \"Change Password\",\n                \"feature\": \"Default\",\n                \"featureKey\": \"DEF\",\n                \"requestStatus\": \"GPRS\"\n            },\n            {\n                \"description\": \"Seems you have entered incorrect password. Please enter a valid password.\",\n                \"recordedDate\": \"2022-08-03T06:11:13.000+0000\",\n                \"activityType\": \"Change Password\",\n                \"feature\": \"Default\",\n                \"featureKey\": \"DEF\",\n                \"requestStatus\": \"GPRS\"\n            },\n            {\n                \"description\": \"Dear Test, your payment of NPR 10.00 for 9849666189 has failed. Please try again later. Failed.\",\n                \"recordedDate\": \"2022-08-03T06:10:01.000+0000\",\n                \"activityType\": \"Payment\",\n                \"feature\": \"Payments\",\n                \"featureKey\": \"MER\",\n                \"requestStatus\": \"GPRS\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Recent statements",
+			"item": [
+				{
+					"name": "statement",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"accountNumber\": \"{{accountNumber}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/recent/statements",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"recent",
+								"statements"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "statement",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"accountNumber\": \"0535751574871001\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/recent/statements",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"recent",
+										"statements"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Security-Policy",
+									"value": "script-src 'self'"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 21 Aug 2022 06:07:49 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=20"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Transaction history obtained successfully\",\n    \"code\": \"0\",\n    \"data\": {\n        \"statements\": [\n            {\n                \"date\": \"16-08-2022\",\n                \"amount\": \"8.00\",\n                \"balance\": \"165,631.00\",\n                \"particular\": \"9849666189\",\n                \"txnType\": \"Dr\",\n                \"txnDate\": \"2022-08-16 04:27:21\"\n            },\n            {\n                \"date\": \"16-08-2022\",\n                \"amount\": \"8.00\",\n                \"balance\": \"165,639.00\",\n                \"particular\": \"9849666189\",\n                \"txnType\": \"Dr\",\n                \"txnDate\": \"2022-08-16 04:23:13\"\n            },\n            {\n                \"date\": \"16-08-2022\",\n                \"amount\": \"8.00\",\n                \"balance\": \"165,647.00\",\n                \"particular\": \"9849666189\",\n                \"txnType\": \"Dr\",\n                \"txnDate\": \"2022-08-16 04:21:17\"\n            },\n            {\n                \"date\": \"15-08-2022\",\n                \"amount\": \"8.00\",\n                \"balance\": \"165,663.00\",\n                \"particular\": \"9849666189\",\n                \"txnType\": \"Dr\",\n                \"txnDate\": \"2022-08-15 10:08:25\"\n            },\n            {\n                \"date\": \"15-08-2022\",\n                \"amount\": \"8.00\",\n                \"balance\": \"165,671.00\",\n                \"particular\": \"9849666189\",\n                \"txnType\": \"Dr\",\n                \"txnDate\": \"2022-08-15 08:55:08\"\n            },\n            {\n                \"date\": \"15-08-2022\",\n                \"amount\": \"8.00\",\n                \"balance\": \"165,679.00\",\n                \"particular\": \"9849666189\",\n                \"txnType\": \"Dr\",\n                \"txnDate\": \"2022-08-15 08:55:00\"\n            },\n            {\n                \"date\": \"15-08-2022\",\n                \"amount\": \"8.00\",\n                \"balance\": \"165,655.00\",\n                \"particular\": \"9849666189\",\n                \"txnType\": \"Dr\",\n                \"txnDate\": \"2022-08-15 16:53:43\"\n            },\n            {\n                \"date\": \"16-08-2022\",\n                \"amount\": \"8.00\",\n                \"balance\": \"165,623.00\",\n                \"particular\": \"9849666189\",\n                \"txnType\": \"Dr\",\n                \"txnDate\": \"2022-08-16 04:28:15\"\n            },\n            {\n                \"date\": \"16-08-2022\",\n                \"amount\": \"8.00\",\n                \"balance\": \"165,615.00\",\n                \"particular\": \"9849666189\",\n                \"txnType\": \"Dr\",\n                \"txnDate\": \"2022-08-16 04:30:26\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{authtoken}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "authtoken",
+			"value": ""
+		},
+		{
+			"key": "url",
+			"value": "http://10.13.194.205:11000/webbackend/v2",
+			"type": "string"
+		},
+		{
+			"key": "content-type",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "accountNumber",
+			"value": ""
+		}
+	]
+}
